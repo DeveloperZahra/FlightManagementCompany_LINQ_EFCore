@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    //Add Flight entity with properties, foreign keys, and relationships
     public class Flight
     {
         // Primary Key for the Flight entity
