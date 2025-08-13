@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Models
 
         // Unique passport number
         [Required]
-        public string PassportNo { get; set; } // [cite: 42]
+        public string PassportNo { get; set; } 
 
         // Nationality of the passenger
         [Required]
