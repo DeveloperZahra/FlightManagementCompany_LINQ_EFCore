@@ -37,5 +37,8 @@ namespace FlightManagementCompany.Models
         public int BookingId { get; set; }
         [ForeignKey("BookingId")]
         public Booking Booking { get; set; }
+
+        // Navigation property for baggage associated with this ticket
+        public ICollection<Baggage> BaggageItems { get; set; }
     }
 }
