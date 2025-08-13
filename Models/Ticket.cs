@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Models
         [Required]
         [cite_start]
         [Column(TypeName = "decimal(18, 2)")] // Specify decimal precision 
-        public decimal Fare { get; set; } // [cite: 53]
+        public decimal Fare { get; set; } 
 
         // Check-in status
         [Required]
