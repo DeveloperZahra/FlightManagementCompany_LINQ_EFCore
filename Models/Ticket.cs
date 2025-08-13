@@ -16,7 +16,7 @@ namespace FlightManagementCompany.Models
 
         // Seat number on the flight
         [Required]
-        public string SeatNumber { get; set; } // [cite: 52]
+        public string SeatNumber { get; set; }
 
         // Fare for the ticket
         [Required]
