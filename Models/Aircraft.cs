@@ -23,6 +23,6 @@ namespace FlightManagementCompany.Models
 
         // Seating capacity of the aircraft
         [Required]
-        public int Capacity { get; set; } // [cite: 23]
+        public int Capacity { get; set; } 
     }
 }
