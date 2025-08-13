@@ -15,7 +15,10 @@ namespace FlightManagementCompany.Models
 
         // Distance in kilometers
         [Required]
-        public int DistanceKm { get; set; } 
+        public int DistanceKm { get; set; }
+
+        // Foreign Key for the origin airport
+        public int AirportId { get; set; }
 
 
     }
