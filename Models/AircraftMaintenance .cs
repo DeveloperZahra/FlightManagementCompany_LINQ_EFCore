@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
 
         // Date of maintenance
         [Required]
-        public DateTime MaintenanceDate { get; set; } // [cite: 65]
+        public DateTime MaintenanceDate { get; set; } 
 
         // Type of maintenance (e.g., A-Check, B-Check)
         [Required]
