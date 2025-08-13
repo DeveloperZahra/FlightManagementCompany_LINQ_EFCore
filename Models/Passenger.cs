@@ -30,6 +30,6 @@ namespace FlightManagementCompany.Models
 
         // Date of Birth
         [Required]
-        public DateTime DOB { get; set; } // [cite: 44]
+        public DateTime DOB { get; set; }
     }
 }
