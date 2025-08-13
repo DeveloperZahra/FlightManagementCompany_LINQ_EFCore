@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Models
 
         // Departure time in UTC
         [Required]
-        public DateTime DepartureUtc { get; set; } // [cite: 35]
+        public DateTime DepartureUtc { get; set; } 
 
         // Arrival time in UTC
         [Required]
