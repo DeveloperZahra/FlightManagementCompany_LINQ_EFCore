@@ -32,5 +32,10 @@ namespace FlightManagementCompany.Models
         public int FlightId { get; set; }
         [ForeignKey("FlightId")]
         public Flight Flight { get; set; }
+
+        // Foreign Key to the Booking
+        public int BookingId { get; set; }
+        [ForeignKey("BookingId")]
+        public Booking Booking { get; set; }
     }
 }
