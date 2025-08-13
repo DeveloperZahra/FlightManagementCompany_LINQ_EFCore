@@ -27,5 +27,10 @@ namespace FlightManagementCompany.Models
         // Check-in status
         [Required]
         public bool Checkedin { get; set; }
+
+        // Foreign Key to the Flight
+        public int FlightId { get; set; }
+        [ForeignKey("FlightId")]
+        public Flight Flight { get; set; }
     }
 }
