@@ -24,7 +24,12 @@ namespace FlightManagementCompany.Models
 
         // Unique tag number for the baggage
         [Required]
-        public string TagNumber { get; set; } 
+        public string TagNumber { get; set; }
+
+
+        // Foreign Key to the Ticket
+        public int TicketId { get; set; } 
+        [ForeignKey("TicketId")]
 
     }
 }
