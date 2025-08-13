@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    //Add Passenger entity with properties and booking relationship
     public class Passenger
     {
         // Primary Key for the Passenger entity
