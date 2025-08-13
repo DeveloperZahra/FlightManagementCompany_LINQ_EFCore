@@ -24,7 +24,13 @@ namespace FlightManagementCompany.Models
 
         //City of destination
         [Required]
-        public string DestinationCity { get; set; } 
+        public string DestinationCity { get; set; }
 
+
+        // Navigation property for related flights
+        public ICollection<Flight> Flights { get; set; }
+
+        // Navigation property for Airport
+        public ICollection<Airport> Airports { get; set; }
     }
 }
