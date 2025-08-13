@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
-    public class Ticket
+    public class FlightCrew
     {
     }
 }
