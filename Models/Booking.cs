@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Models
 
         // Date the booking was made
         [Required]
-        public DateTime BookingDate { get; set; } // [cite: 49]
+        public DateTime BookingDate { get; set; } 
 
         // Status of the booking
         [Required]
