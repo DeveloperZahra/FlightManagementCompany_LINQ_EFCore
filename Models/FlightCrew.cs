@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,15 @@ namespace FlightManagementCompany.Models
         // Foreign Key to Flight
         [ForeignKey("FlightId")]
         public Flight Flight { get; set; }
+
+
+        // Foreign Key to CrewMember
+        [ForeignKey("CrewId")]
+        public CrewMember CrewMember { get; set; }
+
+
+        // Role of the crew member on this specific flight
+        [Required]
+        public string RoleOnFlight { get; set; }
     }
 }
