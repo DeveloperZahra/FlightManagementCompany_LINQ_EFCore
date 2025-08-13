@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Models
 
         // Country where the airport is located
         [Required]
-        public string Country { get; set; } // [cite: 17]
+        public string Country { get; set; } 
 
         // TimeZone of the airport
         [Required]
