@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    //Add Baggage entity with properties and ticket relationship
     public class Baggage
     {
         // Primary Key for the Baggage entity
