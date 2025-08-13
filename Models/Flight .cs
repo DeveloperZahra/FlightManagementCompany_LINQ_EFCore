@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Models
 
         // Arrival time in UTC
         [Required]
-        public DateTime ArrivalUtc { get; set; } // [cite: 36]
+        public DateTime ArrivalUtc { get; set; } 
 
         // Current status of the flight
         [Required]
