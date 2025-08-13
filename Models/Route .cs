@@ -22,7 +22,9 @@ namespace FlightManagementCompany.Models
         [Required]
         public int OriginCity { get; set; }
 
-
+        //City of destination
+        [Required]
+        public string DestinationCity { get; set; } 
 
     }
 }
