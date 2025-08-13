@@ -20,12 +20,12 @@ namespace FlightManagementCompany.Models
 
         // Fare for the ticket
         [Required]
-        [cite_start]
+        
         [Column(TypeName = "decimal(18, 2)")] // Specify decimal precision 
         public decimal Fare { get; set; } 
 
         // Check-in status
         [Required]
-        public bool Checkedin { get; set; } // [cite: 54]
+        public bool Checkedin { get; set; }
     }
 }
