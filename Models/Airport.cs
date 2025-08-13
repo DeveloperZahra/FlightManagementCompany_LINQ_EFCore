@@ -12,12 +12,12 @@ namespace FlightManagementCompany.Models
     {
         // Primary Key for the Airport entity
         [Key]
-        public int AirportId { get; set; } // [cite: 13]
+        public int AirportId { get; set; } 
 
         // 3-letter IATA code, unique constraint required
         [Required]
         [StringLength(3)]
-        public string IATA { get; set; } // [cite: 14]
+        public string IATA { get; set; } 
 
         // Name of the airport
         [Required]
