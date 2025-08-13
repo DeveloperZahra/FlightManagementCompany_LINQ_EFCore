@@ -25,7 +25,10 @@ namespace FlightManagementCompany.Models
         public string Role { get; set; } 
 
         // License number, nullable for non-pilot roles
-        public string? LicenseNo { get; set; } 
+        public string? LicenseNo { get; set; }
+
+        // Navigation property for the many-to-many relationship with flights
+        public ICollection<FlightCrew> FlightCrews { get; set; }
 
     }
 }
