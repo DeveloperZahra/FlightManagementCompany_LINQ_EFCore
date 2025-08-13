@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation property for the origin airport
         [ForeignKey("AirportId")]
-        public Airport OriginAirport { get; set; }
+        public Airport Airports { get; set; }
 
 
     }
