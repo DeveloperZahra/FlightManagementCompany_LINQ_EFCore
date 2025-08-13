@@ -40,5 +40,8 @@ namespace FlightManagementCompany.Models
         public int AircraftId { get; set; }
         [ForeignKey("AircraftId")]
         public Aircraft Aircraft { get; set; }
+
+        // Navigation property for the many-to-many relationship with crew
+        public ICollection<FlightCrew> FlightCrews { get; set; }
     }
 }
