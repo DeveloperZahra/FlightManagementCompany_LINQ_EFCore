@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    //Add Aircraft entity with properties and navigation relationships
     public class Aircraft
     {
         // Primary Key for the Aircraft entity
