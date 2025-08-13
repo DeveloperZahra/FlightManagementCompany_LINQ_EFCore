@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Models
         public string Type { get; set; } 
 
         // Notes on the maintenance performed
-        public string? Notes { get; set; } // [cite: 67]
+        public string? Notes { get; set; } 
 
     }
 }
