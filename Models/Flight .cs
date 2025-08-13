@@ -35,5 +35,10 @@ namespace FlightManagementCompany.Models
         public int RouteId { get; set; }
         [ForeignKey("RouteId")]
         public Route Route { get; set; }
+
+        // Foreign Key to the Aircraft
+        public int AircraftId { get; set; }
+        [ForeignKey("AircraftId")]
+        public Aircraft Aircraft { get; set; }
     }
 }
