@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Models
 
         // Type of maintenance (e.g., A-Check, B-Check)
         [Required]
-        public string Type { get; set; } // [cite: 66]
+        public string Type { get; set; } 
 
         // Notes on the maintenance performed
         public string? Notes { get; set; } // [cite: 67]
