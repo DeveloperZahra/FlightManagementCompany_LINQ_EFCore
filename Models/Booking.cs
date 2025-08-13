@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
 
         // Unique booking reference number
         [Required]
-        public string BookingRef { get; set; } // [cite: 48]
+        public string BookingRef { get; set; } 
 
         // Date the booking was made
         [Required]
