@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,12 @@ namespace FlightManagementCompany.Models
         public string Type { get; set; } 
 
         // Notes on the maintenance performed
-        public string? Notes { get; set; } 
+        public string? Notes { get; set; }
+
+        // Foreign Key to the Aircraft
+        public int AircraftId { get; set; }
+        [ForeignKey("AircraftId")]
+        public Aircraft Aircraft { get; set; }
 
     }
 }
