@@ -36,7 +36,7 @@ namespace FlightManagementCompany.Models
         public string TimeZone { get; set; } 
 
         // Navigation properties for relationships
-        public ICollection<Route> OriginRoutes { get; set; }
+        public ICollection<Route> OriginRoutes { get; set; } 
         public ICollection<Route> DestinationRoutes { get; set; }
     }
 }
