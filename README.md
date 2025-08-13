@@ -136,6 +136,7 @@ passengers and airports — implemented using layered architecture, EF Core, Rep
 
 ![](image/FlightManagementCompany-ERD.png)
 
+
 ### 3) Mapping 
 
 ![](image/FlightManagementCompany-Mapping.png)
