@@ -23,6 +23,10 @@ namespace FlightManagementCompany.Models
 
         // Seating capacity of the aircraft
         [Required]
-        public int Capacity { get; set; } 
+        public int Capacity { get; set; }
+
+
+        // Navigation property for related flights
+        public ICollection<Flight> Flights { get; set; }
     }
 }
