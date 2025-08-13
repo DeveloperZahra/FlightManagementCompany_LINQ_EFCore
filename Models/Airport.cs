@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Models
 
         // City where the airport is located
         [Required]
-        public string City { get; set; } // [cite: 16]
+        public string City { get; set; } 
 
         // Country where the airport is located
         [Required]
