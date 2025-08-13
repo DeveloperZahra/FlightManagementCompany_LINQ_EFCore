@@ -19,7 +19,12 @@ namespace FlightManagementCompany.Models
         [Required]
         
         [Column(TypeName = "decimal(18, 2)")] // Specify decimal precision 
-        public decimal WeightKg { get; set; } 
+        public decimal WeightKg { get; set; }
+
+
+        // Unique tag number for the baggage
+        [Required]
+        public string TagNumber { get; set; } 
 
     }
 }
