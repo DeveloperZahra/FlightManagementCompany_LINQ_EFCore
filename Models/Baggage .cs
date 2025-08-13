@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,14 @@ namespace FlightManagementCompany.Models
     {
         // Primary Key for the Baggage entity
         [Key]
-        public int BaggageId { get; set; } 
+        public int BaggageId { get; set; }
+
+
+        // Weight of the baggage in kilograms
+        [Required]
+        
+        [Column(TypeName = "decimal(18, 2)")] // Specify decimal precision 
+        public decimal WeightKg { get; set; } 
 
     }
 }
