@@ -43,5 +43,8 @@ namespace FlightManagementCompany.Models
 
         // Navigation property for the many-to-many relationship with crew
         public ICollection<FlightCrew> FlightCrews { get; set; }
+
+        // Navigation property for tickets on this flight
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }
