@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Models
 
         // Nationality of the passenger
         [Required]
-        public string Nationality { get; set; } // [cite: 43]
+        public string Nationality { get; set; } 
 
         // Date of Birth
         [Required]
