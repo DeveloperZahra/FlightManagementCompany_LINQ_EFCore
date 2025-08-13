@@ -14,3 +14,8 @@ passengers and airports — implemented using layered architecture, EF Core, Rep
 • Implement per-entity repositories exposing essential CRUD + query methods. 
 
 • Write LINQ queries: joins, groupings, aggregations, partitioning, projection to DTOs, hierarchical queries
+
+
+ ## 🗂️ Business Domain & ERD (entities + relationships):
+
+ ### Entities (core): 
