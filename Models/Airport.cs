@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Models
 
         // TimeZone of the airport
         [Required]
-        public string TimeZone { get; set; } // [cite: 18]
+        public string TimeZone { get; set; } 
 
         // Navigation properties for relationships
         public ICollection<Route> OriginRoutes { get; set; }
