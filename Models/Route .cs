@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
 
         // Distance in kilometers
         [Required]
-        public int DistanceKm { get; set; } // [cite: 32]
+        public int DistanceKm { get; set; } 
 
 
     }
