@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    // Junction table for the many-to-many Flight-Crew relationship
     public class FlightCrew
     {
        // Composite Primary Key 
