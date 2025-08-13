@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+    //Add CrewMember entity with properties and flight crew relationship
     public class CrewMember
     {
         // Primary Key for the CrewMember entity
