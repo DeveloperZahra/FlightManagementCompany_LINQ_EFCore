@@ -20,11 +20,9 @@ namespace FlightManagementCompany.Models
         [Required]
         public string M_L_Name { get; set; }
 
-
-
         // Role of the crew member (e.g., Pilot, CoPilot, FlightAttendant)
         [Required]
-        public string Role { get; set; } // [cite: 27]
+        public string Role { get; set; } 
 
         // License number, nullable for non-pilot roles
         public string? LicenseNo { get; set; } // [cite: 28]
