@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
 
         // Unique tail number of the aircraft
         [Required]
-        public string TailNumber { get; set; } // [cite: 21]
+        public string TailNumber { get; set; } 
 
         // Model of the aircraft
         [Required]
