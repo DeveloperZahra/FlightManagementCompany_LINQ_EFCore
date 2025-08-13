@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Models
 
         // Status of the booking
         [Required]
-        public string Status { get; set; } // [cite: 50]
+        public string Status { get; set; } 
 
     }
 }
