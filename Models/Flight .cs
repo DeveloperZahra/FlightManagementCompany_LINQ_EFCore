@@ -27,6 +27,6 @@ namespace FlightManagementCompany.Models
 
         // Current status of the flight
         [Required]
-        public string Status { get; set; } // [cite: 37]
+        public string Status { get; set; } 
     }
 }
