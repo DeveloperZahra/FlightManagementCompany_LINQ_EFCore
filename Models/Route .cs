@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
+   // Add Route entity with properties and navigation relationships
     public class Route
     {
         // Primary Key for the Route entity
