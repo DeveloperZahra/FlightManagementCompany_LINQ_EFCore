@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,12 @@ namespace FlightManagementCompany.Models
 
         // Status of the booking
         [Required]
-        public string Status { get; set; } 
+        public string Status { get; set; }
+
+        // Foreign Key to the Passenger
+        public int PassengerId { get; set; }
+        [ForeignKey("PassengerId")]
+        public Passenger Passenger { get; set; }
 
     }
 }
