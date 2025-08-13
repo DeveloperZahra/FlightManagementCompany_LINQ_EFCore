@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Models
 
         // Model of the aircraft
         [Required]
-        public string Model { get; set; } // [cite: 22]
+        public string Model { get; set; } 
 
         // Seating capacity of the aircraft
         [Required]
