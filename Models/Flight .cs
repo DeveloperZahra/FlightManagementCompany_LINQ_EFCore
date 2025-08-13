@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
 
         // Flight number (e.g., "FM101")
         [Required]
-        public string FlightNumber { get; set; } // [cite: 34]
+        public string FlightNumber { get; set; } 
 
         // Departure time in UTC
         [Required]
