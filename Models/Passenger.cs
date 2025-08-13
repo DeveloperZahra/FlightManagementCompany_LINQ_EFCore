@@ -15,7 +15,10 @@ namespace FlightManagementCompany.Models
 
         // Full name of the passenger
         [Required]
-        public string FullName { get; set; } // [cite: 41]
+        public string P_F_Name { get; set; }
+
+        [Required]
+        public string P_L_Name { get; set; }
 
         // Unique passport number
         [Required]
