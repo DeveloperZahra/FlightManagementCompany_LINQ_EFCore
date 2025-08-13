@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Models
         public string Role { get; set; } 
 
         // License number, nullable for non-pilot roles
-        public string? LicenseNo { get; set; } // [cite: 28]
+        public string? LicenseNo { get; set; } 
 
     }
 }
