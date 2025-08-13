@@ -31,5 +31,9 @@ namespace FlightManagementCompany.Models
         // Date of Birth
         [Required]
         public DateTime DOB { get; set; }
+
+
+        // Navigation property for bookings made by this passenger
+        public ICollection<Booking> Bookings { get; set; }
     }
 }
