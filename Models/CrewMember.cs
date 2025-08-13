@@ -15,7 +15,12 @@ namespace FlightManagementCompany.Models
 
         // Full name of the crew member
         [Required]
-        public string FullName { get; set; } // [cite: 26]
+        public string M_F_Name { get; set; }
+
+        [Required]
+        public string M_L_Name { get; set; }
+
+
 
         // Role of the crew member (e.g., Pilot, CoPilot, FlightAttendant)
         [Required]
