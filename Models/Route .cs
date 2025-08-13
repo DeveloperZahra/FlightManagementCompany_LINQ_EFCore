@@ -18,12 +18,10 @@ namespace FlightManagementCompany.Models
         [Required]
         public int DistanceKm { get; set; }
 
-        // Foreign Key for the origin airport
-        public int AirportId { get; set; }
+        // City of origin
+        [Required]
+        public int OriginCity { get; set; }
 
-        // Navigation property for the origin airport
-        [ForeignKey("AirportId")]
-        public Airport Airports { get; set; }
 
 
     }
