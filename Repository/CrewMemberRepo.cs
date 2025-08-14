@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
                                                   // all records as a list.
         }
 
-        // Retrieve a crew member by ID
+        // Retrieves a single crew member by their unique ID
         public CrewMember GetCrewMemberById(int CrewId)
         {
             return _context.CrewMembers.Find(CrewId);
