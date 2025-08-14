@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
         // Deletes an airport record from the database by its ID.
         public void DeleteAirport(int AirportId)
             {
-                var airport = _context.Airports.Find(AirportId);
+                var airport = _context.Airports.Find(AirportId); //Finds the airport record by its ID
                 if (airport != null)
                 {
                     _context.Airports.Remove(airport);
