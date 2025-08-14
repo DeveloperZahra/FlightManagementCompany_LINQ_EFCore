@@ -49,8 +49,8 @@ namespace FlightManagementCompany.Repository
                 _context.SaveChanges();
             }
 
-            // Delete an airport by ID
-            public void DeleteAirport(int AirportId)
+        // Deletes an airport record from the database by its ID.
+        public void DeleteAirport(int AirportId)
             {
                 var airport = _context.Airports.Find(AirportId);
                 if (airport != null)
