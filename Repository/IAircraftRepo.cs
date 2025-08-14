@@ -9,7 +9,7 @@ namespace FlightManagementCompany.Repository
     {
        // Adds a new aircraft to the underlying data store
 
-        void AddAircraft(Aircraft aircraft);
+        void AddAircraft(Aircraft aircraft); //The Aircraft object to be added
         void DeleteAircraft(int AircraftId);
         Aircraft GetAircraftById(int AircraftId);
         IEnumerable<Aircraft> GetAllAircraft();
