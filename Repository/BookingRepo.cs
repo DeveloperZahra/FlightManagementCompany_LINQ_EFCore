@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-    internal class BookingRepo
+    public  class BookingRepo
     {
     }
 }
