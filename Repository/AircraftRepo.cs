@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
         // Retrieve all aircrafts from the database
         public IEnumerable<Aircraft> GetAllAircraft()
         {
-            return _context.Aircrafts.ToList();
+            return _context.Aircrafts.ToList(); // Accesses the Aircrafts DbSet from the context and converts it to a list.
         }
 
         // Retrieve a single aircraft by ID
