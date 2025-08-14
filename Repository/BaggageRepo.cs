@@ -42,7 +42,7 @@ namespace FlightManagementCompany.Repository
         // Updates an existing baggage record in the database
         public void UpdateBaggage(Baggage baggage)
         {
-            _context.Baggages.Update(baggage);
+            _context.Baggages.Update(baggage);//Marks the entity as updated so EF Core knows to modify it
             _context.SaveChanges();
         }
 
