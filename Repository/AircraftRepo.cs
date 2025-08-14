@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
         public void DeleteAircraft(int AircraftId)
         {
             var aircraft = _context.Aircrafts.Find(AircraftId); //First, it finds the aircraft by its ID.
-            if (aircraft != null)
+            if (aircraft != null) //  It checks if the aircraft exists before attempting to remove it.
             {
                 _context.Aircrafts.Remove(aircraft);
                 _context.SaveChanges();
