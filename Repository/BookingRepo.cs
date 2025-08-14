@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace FlightManagementCompany.Repository
 {
     //This repository class handles all data access operations for the Booking entity.
-/// It provides methods for performing CRUD operations on booking records.
-    public class BookingRepo
+    /// It provides methods for performing CRUD operations on booking records.
+    public class BookingRepo : IBookingRepo
     {
-      //  A private, read-only field to hold the database context.
-    // This context is the bridge between the application's models and the database.
+        //  A private, read-only field to hold the database context.
+        // This context is the bridge between the application's models and the database.
         private readonly FlightDbContext _context;
 
         //Initializes a new instance of the BookingRepo class.
-    /// This constructor is typically used by a dependency injection container.
+        /// This constructor is typically used by a dependency injection container.
         public BookingRepo(FlightDbContext context)
         {
             _context = context;
