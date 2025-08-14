@@ -15,6 +15,6 @@ namespace FlightManagementCompany.Repository
        void DeleteAircraft(int AircraftId); //Deletes an aircraft from the data store based on its unique ID
         Aircraft GetAircraftById(int AircraftId); //Retrieves a single aircraft by its unique ID
         IEnumerable<Aircraft> GetAllAircraft(); //Retrieves all aircrafts from the data store.
-        void UpdateAircraft(Aircraft aircraft);
+        void UpdateAircraft(Aircraft aircraft);//Updates an existing aircraft record in the data store
     }
 }
