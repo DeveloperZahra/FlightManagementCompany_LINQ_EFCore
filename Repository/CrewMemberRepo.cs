@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Update an existing crew member
+        // Updates an existing crew member record in the database.
         public void UpdateCrewMember(CrewMember crewMember)
         {
             _context.CrewMembers.Update(crewMember);
