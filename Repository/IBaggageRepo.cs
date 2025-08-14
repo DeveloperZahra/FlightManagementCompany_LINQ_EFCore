@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void DeleteBaggage(int BaggageId); //eletes a baggage record from the data store based on its unique ID
         IEnumerable<Baggage> GetAllBaggages();//Retrieves all baggage records from the data store
         Baggage GetBaggageById(int BaggageId); //Retrieves a single baggage record by its unique ID
-        void UpdateBaggage(Baggage baggage);
+        void UpdateBaggage(Baggage baggage);//Updates an existing baggage record in the data store.
     }
 }
