@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
         public void DeleteBaggage(int BaggageId)
         {
             var baggage = _context.Baggages.Find(BaggageId); // First, find the record to be deleted.
-            if (baggage != null)
+            if (baggage != null) // If the record exists, remove it and save changes.
             {
                 _context.Baggages.Remove(baggage);
                 _context.SaveChanges();
