@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     public interface IAircraftMaintenanceRepo
     {
         void AddAircraftMaintenance(AircraftMaintenance maintenance);//Adds a new aircraft maintenance record to the underlying data store
-        void DeleteAircraftMaintenance(int MaintenanceId);
+        void DeleteAircraftMaintenance(int MaintenanceId); //Deletes an aircraft maintenance record from the data store based on its unique ID.
         AircraftMaintenance GetAircraftMaintenanceById(int MaintenanceId);
         IEnumerable<AircraftMaintenance> GetAllAircraftMaintenance();
         void UpdateAircraftMaintenance(AircraftMaintenance maintenance);
