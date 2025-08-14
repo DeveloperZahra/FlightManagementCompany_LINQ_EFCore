@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
             return _context.booking.ToList();  // Accesses the Bookings DbSet and retrieves all records, returning them as a list.
         }
 
-        // Retrieve a single booking by ID
+        // Retrieves a single booking by its unique ID.
         public Booking GetById(int BookingId)
         {
             return _context.booking.Find(BookingId);
