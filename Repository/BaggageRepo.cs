@@ -21,35 +21,35 @@ namespace FlightManagementCompany.Repository
         }
 
         // Retrieve all baggage records from the database
-        public IEnumerable<Baggage> GetAll()
+        public IEnumerable<Baggage> GetAllBaggages()
         {
             return _context.Baggages.ToList();
         }
 
-        // Retrieve a single baggage record by ID
-        public Baggage GetById(int id)
+        // Retrieves all baggage records from the database
+        public Baggage GetBaggageById(int BaggageId)
         {
-            return _context.Baggages.Find(id);
+            return _context.Baggages.Find(BaggageId);
         }
 
         // Add a new baggage record to the database
-        public void Add(Baggage baggage)
+        public void AddBaggage(Baggage baggage)
         {
             _context.Baggages.Add(baggage);
             _context.SaveChanges();
         }
 
         // Update an existing baggage record
-        public void Update(Baggage baggage)
+        public void UpdateBaggage(Baggage baggage)
         {
             _context.Baggages.Update(baggage);
             _context.SaveChanges();
         }
 
         // Delete a baggage record by ID
-        public void Delete(int id)
+        public void DeleteBaggage(int BaggageId)
         {
-            var baggage = _context.Baggages.Find(id);
+            var baggage = _context.Baggages.Find(BaggageId);
             if (baggage != null)
             {
                 _context.Baggages.Remove(baggage);
