@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Repository
         // Adds a new booking record to the database.
         public void AddBooking(Booking booking)
         {
-            _context.booking.Add(booking);
+            _context.booking.Add(booking);  // Adds the new entity to the context
             _context.SaveChanges();
         }
 
