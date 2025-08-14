@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
         // Adds a new baggage record to the database.
         public void AddBaggage(Baggage baggage)
         {
-            _context.Baggages.Add(baggage);
+            _context.Baggages.Add(baggage); // Adds the new entity to the context's tracking system. 
             _context.SaveChanges();
         }
 
