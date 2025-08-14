@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges(); // Commits the changes to the database.
         }
 
-        // Update an existing maintenance record
+        // Updates an existing aircraft maintenance record in the database
         public void UpdateAircraftMaintenance(AircraftMaintenance maintenance)
         {
             _context.AircraftMaintenances.Update(maintenance);
