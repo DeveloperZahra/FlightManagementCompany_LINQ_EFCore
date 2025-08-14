@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void DeleteAircraftMaintenance(int MaintenanceId); //Deletes an aircraft maintenance record from the data store based on its unique ID.
         AircraftMaintenance GetAircraftMaintenanceById(int MaintenanceId); //Retrieves a single aircraft maintenance record by its unique ID
         IEnumerable<AircraftMaintenance> GetAllAircraftMaintenance(); //Retrieves all aircraft maintenance records from the data store
-        void UpdateAircraftMaintenance(AircraftMaintenance maintenance);
+        void UpdateAircraftMaintenance(AircraftMaintenance maintenance); //Updates an existing aircraft maintenance record in the data store
     }
 }
