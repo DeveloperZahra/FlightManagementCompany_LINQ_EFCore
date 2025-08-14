@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
             return _context.booking.Find(BookingId);// Uses the efficient Find() method to look up the booking by its primary key.
         }
 
-        // Add a new booking to the database
+        // Adds a new booking record to the database.
         public void AddBooking(Booking booking)
         {
             _context.booking.Add(booking);
