@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
             return _context.Baggages.ToList();
         }
 
-        // Retrieves all baggage records from the database
+        // Retrieves a single baggage record by its unique ID
         public Baggage GetBaggageById(int BaggageId)
         {
             return _context.Baggages.Find(BaggageId);
