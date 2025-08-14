@@ -46,7 +46,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Delete an aircraft by ID
+        // This method deletes an aircraft from the database by its ID.
         public void DeleteAircraft(int AircraftId)
         {
             var aircraft = _context.Aircrafts.Find(AircraftId);
