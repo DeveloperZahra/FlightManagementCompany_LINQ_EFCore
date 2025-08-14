@@ -49,7 +49,7 @@ namespace FlightManagementCompany.Repository
         // Deletes a baggage record from the database by its ID.
         public void DeleteBaggage(int BaggageId)
         {
-            var baggage = _context.Baggages.Find(BaggageId);
+            var baggage = _context.Baggages.Find(BaggageId); // First, find the record to be deleted.
             if (baggage != null)
             {
                 _context.Baggages.Remove(baggage);
