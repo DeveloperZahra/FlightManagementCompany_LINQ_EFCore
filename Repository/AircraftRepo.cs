@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Update an existing aircraft in the database
+        // This method updates an existing aircraft entity in the database.
         public void UpdateAircraft(Aircraft aircraft)
         {
             _context.Aircrafts.Update(aircraft);
