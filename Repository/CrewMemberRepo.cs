@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Repository
         // Updates an existing crew member record in the database.
         public void UpdateCrewMember(CrewMember crewMember)
         {
-            _context.CrewMembers.Update(crewMember);
+            _context.CrewMembers.Update(crewMember); // Marks the entity as updated so EF Core knows to modify it
             _context.SaveChanges();
         }
 
