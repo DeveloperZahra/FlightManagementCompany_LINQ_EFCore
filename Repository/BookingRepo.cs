@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Repository
             _context = context;
         }
 
-        // Retrieve all bookings from the database
+        // Retrieves all booking records from the database.
         public IEnumerable<Booking> GetAllBooking()
         {
             return _context.booking.ToList();
