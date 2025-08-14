@@ -53,8 +53,8 @@ namespace FlightManagementCompany.Repository
         public void DeleteAirport(int AirportId)
             {
                 var airport = _context.Airports.Find(AirportId); //Finds the airport record by its ID
-                if (airport != null)
-                {
+                if (airport != null) // Checks if the airport was found before attempting to delete it.
+            {
                     _context.Airports.Remove(airport);
                     _context.SaveChanges();
                 }
