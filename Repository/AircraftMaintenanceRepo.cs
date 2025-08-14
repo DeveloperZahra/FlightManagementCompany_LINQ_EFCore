@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace FlightManagementCompany.Repository
 {
     //This repository class is responsible for all data access operations related to
-/// the AircraftMaintenance entity
-    public class AircraftMaintenanceRepo
+    /// the AircraftMaintenance entity
+    public class AircraftMaintenanceRepo : IAircraftMaintenanceRepo
     {
         // A private, read-only field to hold the database context. This is injected
         // through the constructor and used to interact with the database
@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Repository
         public IEnumerable<AircraftMaintenance> GetAllAircraftMaintenance()
         {
             return _context.AircraftMaintenances.ToList(); // Accesses the AircraftMaintenances DbSet from the context and returns
-                                                          // all records as a list
+                                                           // all records as a list
         }
 
         // Retrieves a single maintenance record by its unique ID
