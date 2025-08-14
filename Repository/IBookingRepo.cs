@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
     /// It specifies the core data access operations (CRUD) for the Booking model.
     public interface IBookingRepo
     {
-        void AddBooking(Booking booking);
+        void AddBooking(Booking booking); //Adds a new booking to the underlying data store.
         void DeleteBooking(int BookingId);
         IEnumerable<Booking> GetAllBooking();
         Booking GetById(int BookingId);
