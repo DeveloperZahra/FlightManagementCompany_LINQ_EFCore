@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Repository
             _context = context;
         }
 
-        // Retrieve all maintenance records
+        // Retrieves all maintenance records from the database
         public IEnumerable<AircraftMaintenance> GetAllAircraftMaintenance()
         {
             return _context.AircraftMaintenances.ToList();
