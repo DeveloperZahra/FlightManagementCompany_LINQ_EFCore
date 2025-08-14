@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void DeleteCrewMember(int CrewId);//Deletes a crew member from the data store based on their unique ID
         IEnumerable<CrewMember> GetAllCrewMembers(); //Retrieves all crew members from the data store
         CrewMember GetCrewMemberById(int CrewId); //Retrieves a single crew member by their unique ID.
-        void UpdateCrewMember(CrewMember crewMember);
+        void UpdateCrewMember(CrewMember crewMember); //Updates an existing crew member record in the data store.
     }
 }
