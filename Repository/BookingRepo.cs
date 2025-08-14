@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Delete a booking by ID
+        // Deletes a booking record from the database by its ID.
         public void DeleteBooking(int BookingId)
         {
             var booking = _context.booking.Find(BookingId);
