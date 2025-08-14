@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-    internal class CrewMemberRepo
+    public class CrewMemberRepo
     {
     }
 }
