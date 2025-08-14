@@ -11,7 +11,8 @@ namespace FlightManagementCompany.Repository
 /// It provides methods for performing CRUD operations on booking records.
     public class BookingRepo
     {
-
+      //  A private, read-only field to hold the database context.
+    // This context is the bridge between the application's models and the database.
         private readonly FlightDbContext _context;
 
         public BookingRepo(FlightDbContext context)
