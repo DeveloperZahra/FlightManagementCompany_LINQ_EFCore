@@ -15,6 +15,7 @@ namespace FlightManagementCompany.Repository
         // through the constructor and used to interact with the database
         private readonly FlightDbContext _context;
 
+        //Initializes a new instance of the AircraftMaintenanceRepo class
         public AircraftMaintenanceRepo(FlightDbContext context)
         {
             _context = context;
