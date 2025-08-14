@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
         public void AddAircraftMaintenance(AircraftMaintenance maintenance)
         {
             _context.AircraftMaintenances.Add(maintenance); // Adds the new entity to the context's tracking system.
-            _context.SaveChanges();
+            _context.SaveChanges(); // Commits the changes to the database.
         }
 
         // Update an existing maintenance record
