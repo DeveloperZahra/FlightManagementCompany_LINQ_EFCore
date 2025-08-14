@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     public interface ICrewMemberRepo
     {
         void AddCrewMember(CrewMember crewMember);// Adds a new crew member to the underlying data store
-        void DeleteCrewMember(int CrewId);
+        void DeleteCrewMember(int CrewId);//Deletes a crew member from the data store based on their unique ID
         IEnumerable<CrewMember> GetAllCrewMembers();
         CrewMember GetCrewMemberById(int CrewId);
         void UpdateCrewMember(CrewMember crewMember);
