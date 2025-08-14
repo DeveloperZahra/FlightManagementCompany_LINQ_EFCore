@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
         public void DeleteCrewMember(int CrewId)
         {
             var crewMember = _context.CrewMembers.Find(CrewId); // First, find the record to be deleted
-            if (crewMember != null)
+            if (crewMember != null) // If the record exists, remove it and save changes.
             {
                 _context.CrewMembers.Remove(crewMember);
                 _context.SaveChanges();
