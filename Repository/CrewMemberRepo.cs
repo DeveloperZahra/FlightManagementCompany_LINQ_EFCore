@@ -11,6 +11,8 @@ namespace FlightManagementCompany.Repository
 /// the CrewMember entity. It provides methods for performing CRUD operations.
     public class CrewMemberRepo
     {
+        // A private, read-only field to hold the database context. This is injected
+        // through the constructor and used to interact with the database
         private readonly FlightDbContext _context;
 
         public CrewMemberRepo(FlightDbContext context)
