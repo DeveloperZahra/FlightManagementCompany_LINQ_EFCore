@@ -19,9 +19,9 @@ namespace FlightManagementCompany.Repository
         {
             _context = context;
         }
-
+        // This method retrieves all aircrafts from the database and returns them as a list.
         // Retrieve all aircrafts from the database
-        public IEnumerable<Aircraft> GetAll()
+        public IEnumerable<Aircraft> GetAllAircraft()
         {
             return _context.Aircrafts.ToList();
         }
