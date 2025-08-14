@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
             return _context.AircraftMaintenances.Find(MaintenanceId);  // The Find() method is used for efficient lookup by primary key
         }
 
-        // Add a new maintenance record
+        // Adds a new aircraft maintenance record to the database
         public void AddAircraftMaintenance(AircraftMaintenance maintenance)
         {
             _context.AircraftMaintenances.Add(maintenance);
