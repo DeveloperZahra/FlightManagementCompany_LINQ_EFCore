@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
             return _context.Baggages.Find(BaggageId); // Uses the Find() method for efficient lookup by primary key.
         }
 
-        // Add a new baggage record to the database
+        // Adds a new baggage record to the database.
         public void AddBaggage(Baggage baggage)
         {
             _context.Baggages.Add(baggage);
