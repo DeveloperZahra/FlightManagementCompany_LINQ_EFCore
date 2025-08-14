@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Delete a maintenance record by ID
+        //  Deletes an aircraft maintenance record from the database by its ID
         public void DeleteAircraftMaintenance(int MaintenanceId)
         {
             var maintenance = _context.AircraftMaintenances.Find(MaintenanceId);
