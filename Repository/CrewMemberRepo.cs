@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Repository
         //Adds a new crew member record to the database
         public void AddCrewMember(CrewMember crewMember)
         {
-            _context.CrewMembers.Add(crewMember);
+            _context.CrewMembers.Add(crewMember); // Adds the new entity to the context's tracking system
             _context.SaveChanges();
         }
 
