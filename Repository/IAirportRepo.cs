@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
     public interface IAirportRepo
     {
         void AddAirport(Airport airport); //Adds a new airport to the underlying data store
-        void DeleteAirport(int AirportId);
+        void DeleteAirport(int AirportId);//Deletes an airport from the data store based on its unique ID.
         Airport GetAirportById(int AirportId);
         IEnumerable<Airport> GetAllAirports();
         void UpdateAirport(Airport airport);
