@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
 /// It specifies the core data access operations (CRUD) for the AircraftMaintenance model.
     public interface IAircraftMaintenanceRepo
     {
-        void AddAircraftMaintenance(AircraftMaintenance maintenance);
+        void AddAircraftMaintenance(AircraftMaintenance maintenance);//Adds a new aircraft maintenance record to the underlying data store
         void DeleteAircraftMaintenance(int MaintenanceId);
         AircraftMaintenance GetAircraftMaintenanceById(int MaintenanceId);
         IEnumerable<AircraftMaintenance> GetAllAircraftMaintenance();
