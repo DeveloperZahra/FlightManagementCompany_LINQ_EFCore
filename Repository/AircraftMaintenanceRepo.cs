@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Repository
         // Updates an existing aircraft maintenance record in the database
         public void UpdateAircraftMaintenance(AircraftMaintenance maintenance)
         {
-            _context.AircraftMaintenances.Update(maintenance);
+            _context.AircraftMaintenances.Update(maintenance); // Marks the entity as updated so EF Core knows to modify it
             _context.SaveChanges();
         }
 
