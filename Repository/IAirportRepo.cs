@@ -11,6 +11,6 @@ namespace FlightManagementCompany.Repository
         void DeleteAirport(int AirportId);//Deletes an airport from the data store based on its unique ID.
         Airport GetAirportById(int AirportId); // Retrieves a single airport by its unique ID
         IEnumerable<Airport> GetAllAirports();// Retrieves all airports from the data store
-        void UpdateAirport(Airport airport);
+        void UpdateAirport(Airport airport);// Updates an existing airport record in the data store
     }
 }
