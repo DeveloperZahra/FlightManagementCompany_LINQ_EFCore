@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     public interface IBaggageRepo
     {
         void AddBaggage(Baggage baggage); // Adds a new baggage record to the underlying data store
-        void DeleteBaggage(int BaggageId);
+        void DeleteBaggage(int BaggageId); //eletes a baggage record from the data store based on its unique ID
         IEnumerable<Baggage> GetAllBaggages();
         Baggage GetBaggageById(int BaggageId);
         void UpdateBaggage(Baggage baggage);
