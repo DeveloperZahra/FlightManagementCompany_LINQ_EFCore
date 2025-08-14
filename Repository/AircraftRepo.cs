@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
             return _context.Aircrafts.ToList(); // Accesses the Aircrafts DbSet from the context and converts it to a list.
         }
 
-        // Retrieve a single aircraft by ID
+        // Retrieve a single aircraft by its primary key ID
         public Aircraft GetAircraftById(int AircraftId)
         {
             return _context.Aircrafts.Find(AircraftId);
