@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void DeleteBooking(int BookingId); //Deletes a booking from the data store based on its unique ID.
         IEnumerable<Booking> GetAllBooking(); //Retrieves all bookings from the data store.
         Booking GetById(int BookingId); // Retrieves a single booking by its unique ID.
-        void UpdateBooking(Booking booking);
+        void UpdateBooking(Booking booking); //Updates an existing booking record in the data store.
     }
 }
