@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves a single crew member by their unique ID
         public CrewMember GetCrewMemberById(int CrewId)
         {
-            return _context.CrewMembers.Find(CrewId);
+            return _context.CrewMembers.Find(CrewId); // The Find() method is used for efficient lookup by primary key
         }
 
         // Add a new crew member
