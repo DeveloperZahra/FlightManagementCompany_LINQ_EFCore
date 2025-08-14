@@ -11,6 +11,8 @@ namespace FlightManagementCompany.Repository
 /// the AircraftMaintenance entity
     public class AircraftMaintenanceRepo
     {
+        // A private, read-only field to hold the database context. This is injected
+        // through the constructor and used to interact with the database
         private readonly FlightDbContext _context;
 
         public AircraftMaintenanceRepo(FlightDbContext context)
