@@ -42,8 +42,8 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
             }
 
-            // Update an existing airport in the database
-            public void UpdateAirport(Airport airport)
+        // Updates an existing airport record in the database.
+        public void UpdateAirport(Airport airport)
             {
                 _context.Airports.Update(airport);
                 _context.SaveChanges();
