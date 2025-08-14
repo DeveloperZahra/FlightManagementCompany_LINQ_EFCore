@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
         public void DeleteAircraftMaintenance(int MaintenanceId)
         {
             var maintenance = _context.AircraftMaintenances.Find(MaintenanceId); // First, find the record to be deleted
-            if (maintenance != null)
+            if (maintenance != null)  // If the record exists, remove it and save changes
             {
                 _context.AircraftMaintenances.Remove(maintenance);
                 _context.SaveChanges();
