@@ -54,7 +54,7 @@ namespace FlightManagementCompany.Repository
             var booking = _context.booking.Find(BookingId);//Finds the booking record by its ID
             if (booking != null) // Checks if the booking was found before attempting to delete it.
             {
-                _context.booking.Remove(booking); 
+                _context.booking.Remove(booking); // Removes the entity from the context.
                 _context.SaveChanges();
             }
         }
