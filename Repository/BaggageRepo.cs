@@ -10,6 +10,8 @@ namespace FlightManagementCompany.Repository
 /// It provides methods for performing CRUD operations on baggage records
     public class BaggageRepo
     {
+        // A private, read-only field to hold the database context.
+        // This context is the entry point to the database for this repository
         private readonly FlightDbContext _context;
 
         public BaggageRepo(FlightDbContext context)
