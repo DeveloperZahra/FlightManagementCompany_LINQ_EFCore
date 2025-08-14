@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves a single maintenance record by its unique ID
         public AircraftMaintenance GetAircraftMaintenanceById(int MaintenanceId)
         {
-            return _context.AircraftMaintenances.Find(MaintenanceId);
+            return _context.AircraftMaintenances.Find(MaintenanceId);  // The Find() method is used for efficient lookup by primary key
         }
 
         // Add a new maintenance record
