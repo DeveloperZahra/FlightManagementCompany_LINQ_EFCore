@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Repository
         // Updates an existing booking record in the database
         public void UpdateBooking(Booking booking)
         {
-            _context.booking.Update(booking);
+            _context.booking.Update(booking); // Marks the entity as updated.
             _context.SaveChanges();
         }
 
