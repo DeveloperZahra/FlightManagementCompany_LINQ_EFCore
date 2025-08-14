@@ -11,8 +11,10 @@ namespace FlightManagementCompany.Repository
 /// It implements the core CRUD (Create, Read, Update, Delete) functionality
     public class AirportRepo
     {
-        
-            private readonly FlightDbContext _context;
+        // A private, read-only field to hold the database context.
+        // This is the bridge between the application's models and the database
+
+        private readonly FlightDbContext _context;
 
             public AirportRepo(FlightDbContext context)
             {
