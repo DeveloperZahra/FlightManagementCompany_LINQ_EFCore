@@ -14,6 +14,7 @@ namespace FlightManagementCompany.Repository
         // This context is the entry point to the database for this repository
         private readonly FlightDbContext _context;
 
+        //Initializes a new instance of the BaggageRepo class
         public BaggageRepo(FlightDbContext context)
         {
             _context = context;
