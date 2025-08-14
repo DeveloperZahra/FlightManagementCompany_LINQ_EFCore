@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace FlightManagementCompany.Repository
 {
     //This repository class is responsible for all data access operations related to
-/// the CrewMember entity. It provides methods for performing CRUD operations.
-    public class CrewMemberRepo
+    /// the CrewMember entity. It provides methods for performing CRUD operations.
+    public class CrewMemberRepo : ICrewMemberRepo
     {
         // A private, read-only field to hold the database context. This is injected
         // through the constructor and used to interact with the database
