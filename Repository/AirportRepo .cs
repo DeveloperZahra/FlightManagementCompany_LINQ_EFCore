@@ -23,8 +23,8 @@ namespace FlightManagementCompany.Repository
                 _context = context;
             }
 
-            // Retrieve all airports from the database
-            public IEnumerable<Airport> GetAllAirports()
+        // Retrieves all airport records from the database
+        public IEnumerable<Airport> GetAllAirports()
             {
                 return _context.Airports.ToList();
             }
