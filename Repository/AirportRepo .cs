@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-   // This repository class handles all data access operations for the Airport entity.
-/// It implements the core CRUD (Create, Read, Update, Delete) functionality
-    public class AirportRepo
+    // This repository class handles all data access operations for the Airport entity.
+    /// It implements the core CRUD (Create, Read, Update, Delete) functionality
+    public class AirportRepo : IAirportRepo
     {
         // A private, read-only field to hold the database context.
         // This is the bridge between the application's models and the database
@@ -17,47 +17,47 @@ namespace FlightManagementCompany.Repository
         private readonly FlightDbContext _context;
 
         //Initializes a new instance of the AirportRepo class.
-    /// This constructor is typically used by a dependency injection container
-            public AirportRepo(FlightDbContext context)
-            {
-                _context = context;
-            }
+        /// This constructor is typically used by a dependency injection container
+        public AirportRepo(FlightDbContext context)
+        {
+            _context = context;
+        }
 
         // Retrieves all airport records from the database
         public IEnumerable<Airport> GetAllAirports()
-            {
-                return _context.Airports.ToList(); // Accesses the Airports DbSet and retrieves all records, returning them as a list.
+        {
+            return _context.Airports.ToList(); // Accesses the Airports DbSet and retrieves all records, returning them as a list.
         }
 
         //  Retrieves a single airport by its unique ID
         public Airport GetAirportById(int AirportId)
-            {
-                return _context.Airports.Find(AirportId); // Uses the efficient Find() method to look up the airport by its primary key.
+        {
+            return _context.Airports.Find(AirportId); // Uses the efficient Find() method to look up the airport by its primary key.
         }
 
         // Adds a new airport record to the database
         public void AddAirport(Airport airport)
-            {
-                _context.Airports.Add(airport); // Adds the new entity to the context.
+        {
+            _context.Airports.Add(airport); // Adds the new entity to the context.
             _context.SaveChanges();
-            }
+        }
 
         // Updates an existing airport record in the database.
         public void UpdateAirport(Airport airport)
-            {
-                _context.Airports.Update(airport); //Marks the entity as updated.
-                _context.SaveChanges();
-            }
+        {
+            _context.Airports.Update(airport); //Marks the entity as updated.
+            _context.SaveChanges();
+        }
 
         // Deletes an airport record from the database by its ID.
         public void DeleteAirport(int AirportId)
+        {
+            var airport = _context.Airports.Find(AirportId); //Finds the airport record by its ID
+            if (airport != null) // Checks if the airport was found before attempting to delete it.
             {
-                var airport = _context.Airports.Find(AirportId); //Finds the airport record by its ID
-                if (airport != null) // Checks if the airport was found before attempting to delete it.
-            {
-                    _context.Airports.Remove(airport);
-                    _context.SaveChanges();
-                }
+                _context.Airports.Remove(airport);
+                _context.SaveChanges();
             }
         }
+    }
 }
