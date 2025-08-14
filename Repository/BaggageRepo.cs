@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves a single baggage record by its unique ID
         public Baggage GetBaggageById(int BaggageId)
         {
-            return _context.Baggages.Find(BaggageId);
+            return _context.Baggages.Find(BaggageId); // Uses the Find() method for efficient lookup by primary key.
         }
 
         // Add a new baggage record to the database
