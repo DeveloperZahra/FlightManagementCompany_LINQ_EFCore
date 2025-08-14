@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
                                                           // all records as a list
         }
 
-        // Retrieve a maintenance record by ID
+        // Retrieves a single maintenance record by its unique ID
         public AircraftMaintenance GetAircraftMaintenanceById(int MaintenanceId)
         {
             return _context.AircraftMaintenances.Find(MaintenanceId);
