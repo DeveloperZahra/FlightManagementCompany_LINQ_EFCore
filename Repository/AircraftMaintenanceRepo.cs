@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
         //  Deletes an aircraft maintenance record from the database by its ID
         public void DeleteAircraftMaintenance(int MaintenanceId)
         {
-            var maintenance = _context.AircraftMaintenances.Find(MaintenanceId);
+            var maintenance = _context.AircraftMaintenances.Find(MaintenanceId); // First, find the record to be deleted
             if (maintenance != null)
             {
                 _context.AircraftMaintenances.Remove(maintenance);
