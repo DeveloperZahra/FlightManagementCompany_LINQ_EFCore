@@ -38,8 +38,8 @@ namespace FlightManagementCompany.Repository
         // Adds a new airport record to the database
         public void AddAirport(Airport airport)
             {
-                _context.Airports.Add(airport);
-                _context.SaveChanges();
+                _context.Airports.Add(airport); // Adds the new entity to the context.
+            _context.SaveChanges();
             }
 
             // Update an existing airport in the database
