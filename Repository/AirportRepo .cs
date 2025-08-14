@@ -35,8 +35,8 @@ namespace FlightManagementCompany.Repository
                 return _context.Airports.Find(AirportId); // Uses the efficient Find() method to look up the airport by its primary key.
         }
 
-            // Add a new airport to the database
-            public void AddAirport(Airport airport)
+        // Adds a new airport record to the database
+        public void AddAirport(Airport airport)
             {
                 _context.Airports.Add(airport);
                 _context.SaveChanges();
