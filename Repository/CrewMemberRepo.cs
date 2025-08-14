@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Delete a crew member by ID
+        // Deletes a crew member record from the database by their ID.
         public void DeleteCrewMember(int CrewId)
         {
             var crewMember = _context.CrewMembers.Find(CrewId);
