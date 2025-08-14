@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-    public class AircraftRepo
+    //A concrete implementation of the IAircraftRepo interface using Entity Framework Core.
+/// It handles data access for the Aircraft entity
+    public class AircraftRepo : IAircraftRepo
     {
         // Private field to hold the database context.
         // The FlightDbContext is used to interact with the database
