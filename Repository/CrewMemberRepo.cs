@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Repository
             _context = context;
         }
 
-        // Retrieve all crew members
+        //  Retrieves all crew members from the database
         public IEnumerable<CrewMember> GetAllCrewMembers()
         {
             return _context.CrewMembers.ToList();
