@@ -16,6 +16,8 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _context;
 
+        //Initializes a new instance of the AirportRepo class.
+    /// This constructor is typically used by a dependency injection container
             public AirportRepo(FlightDbContext context)
             {
                 _context = context;
