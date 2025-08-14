@@ -13,6 +13,8 @@ namespace FlightManagementCompany.Repository
         // The FlightDbContext is used to interact with the database
         private readonly FlightDbContext _context;
 
+        // Constructor for the AircraftRepo class.
+        /// Initializes the repository with a database context
         public AircraftRepo(FlightDbContext context)
         {
             _context = context;
