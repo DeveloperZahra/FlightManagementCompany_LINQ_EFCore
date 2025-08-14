@@ -26,8 +26,8 @@ namespace FlightManagementCompany.Repository
         // Retrieves all airport records from the database
         public IEnumerable<Airport> GetAllAirports()
             {
-                return _context.Airports.ToList();
-            }
+                return _context.Airports.ToList(); // Accesses the Airports DbSet and retrieves all records, returning them as a list.
+        }
 
             // Retrieve a single airport by ID
             public Airport GetAirportById(int AirportId)
