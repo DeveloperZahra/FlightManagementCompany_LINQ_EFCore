@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Update an existing baggage record
+        // Updates an existing baggage record in the database
         public void UpdateBaggage(Baggage baggage)
         {
             _context.Baggages.Update(baggage);
