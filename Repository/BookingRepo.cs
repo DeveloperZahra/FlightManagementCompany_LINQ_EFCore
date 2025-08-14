@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves all booking records from the database.
         public IEnumerable<Booking> GetAllBooking()
         {
-            return _context.booking.ToList();
+            return _context.booking.ToList();  // Accesses the Bookings DbSet and retrieves all records, returning them as a list.
         }
 
         // Retrieve a single booking by ID
