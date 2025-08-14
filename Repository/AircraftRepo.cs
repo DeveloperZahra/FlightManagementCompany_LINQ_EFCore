@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
             return _context.Aircrafts.Find(AircraftId);
         }
 
-        // Add a new aircraft to the database
+        // This method adds a new aircraft entity to the database.
         public void AddAircraft(Aircraft aircraft)
         {
             _context.Aircrafts.Add(aircraft);
