@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
             return _context.CrewMembers.Find(CrewId); // The Find() method is used for efficient lookup by primary key
         }
 
-        // Add a new crew member
+        //Adds a new crew member record to the database
         public void AddCrewMember(CrewMember crewMember)
         {
             _context.CrewMembers.Add(crewMember);
