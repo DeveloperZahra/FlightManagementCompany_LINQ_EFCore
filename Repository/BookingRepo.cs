@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves a single booking by its unique ID.
         public Booking GetById(int BookingId)
         {
-            return _context.booking.Find(BookingId);
+            return _context.booking.Find(BookingId);// Uses the efficient Find() method to look up the booking by its primary key.
         }
 
         // Add a new booking to the database
