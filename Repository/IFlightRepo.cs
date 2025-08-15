@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     public interface IFlightRepo
     {
         void AddFlight(Flight flight); //Adds a new flight to the underlying data store.
-        void DeleteFlight(int FlightId);
+        void DeleteFlight(int FlightId);//Deletes a flight from the data store based on its unique ID
         IEnumerable<Flight> GetAllFlights();
         Flight GetFlightById(int FlightId);
         void UpdateFlight(Flight flight);
