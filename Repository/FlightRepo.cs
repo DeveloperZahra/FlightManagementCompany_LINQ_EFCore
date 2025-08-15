@@ -15,6 +15,8 @@ namespace FlightManagementCompany.Repository
         // This is the bridge between the application's models and the database
         private readonly FlightDbContext _context;
 
+       // Initializes a new instance of the FlightRepo class.
+    /// This constructor receives the database context via dependency injection
         public FlightRepo(FlightDbContext context)
         {
             _context = context;
