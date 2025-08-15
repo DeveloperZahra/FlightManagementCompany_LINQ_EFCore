@@ -32,6 +32,6 @@ namespace FlightManagementCompany.Models
 
         public Flight Flights { get; set; } // Navigation property to Flight
 
-        public CrewMember CrewMember { get; set; } // Navigation property to CrewMember
+        public CrewMember CrewMembers { get; set; } // Navigation property to CrewMember
     }
 }
