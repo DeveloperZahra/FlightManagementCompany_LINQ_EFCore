@@ -9,7 +9,7 @@ namespace FlightManagementCompany.Repository
         void AddFlight(Flight flight); //Adds a new flight to the underlying data store.
         void DeleteFlight(int FlightId);//Deletes a flight from the data store based on its unique ID
         IEnumerable<Flight> GetAllFlights();//Retrieves all flights from the data store
-        Flight GetFlightById(int FlightId);
+        Flight GetFlightById(int FlightId);//Retrieves a single flight by its unique ID
         void UpdateFlight(Flight flight);
     }
 }
