@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightManagementCompany.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,11 @@ namespace FlightManagementCompany.Repository
                 _context = context;
             }
 
+        // Retrieve all tickets
+        public IEnumerable<Ticket> GetAllTickets()
+        {
+            return _context.Tickets.ToList();
+        }
 
 
 
