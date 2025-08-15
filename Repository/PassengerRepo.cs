@@ -11,7 +11,9 @@ namespace FlightManagementCompany.Repository
 /// It provides a connection to the database context to perform these operations
     public class PassengerRepo
     {
-            private readonly FlightDbContext _context;
+        // A private, read-only field to hold the database context.
+        // This is the bridge between the application's models and the database
+        private readonly FlightDbContext _context;
 
             public PassengerRepo(FlightDbContext context)
             {
