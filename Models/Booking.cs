@@ -34,6 +34,6 @@ namespace FlightManagementCompany.Models
 
 
         // Navigation property for tickets in this booking
-        public ICollection<Ticket> Tickets { get; set; }
+        public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }
