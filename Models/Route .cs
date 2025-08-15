@@ -34,7 +34,8 @@ namespace FlightManagementCompany.Models
         [InverseProperty("DistenationRoute")]
         public Airport DistenationAirport { get; set; }
 
-        // Navigation property for Airport
-        public ICollection<Airport> Airports { get; set; }
+        // Navigation property for Flight
+        public ICollection<Flight> Flights { get; set; } = new List<Flight>();
+
     }
 }
