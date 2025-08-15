@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
         //// Retrieves all flight records from the database
         public IEnumerable<Flight> GetAllFlights()
         {
-            return _context.Flights].ToList(); 
+            return _context.Flights.ToList(); // Accesses the Flights DbSet and retrieves all records, returning them as a list.
         }
 
         // Retrieve a flight by ID
