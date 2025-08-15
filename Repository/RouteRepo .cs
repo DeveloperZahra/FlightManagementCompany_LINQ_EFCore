@@ -28,5 +28,13 @@ namespace FlightManagementCompany.Repository
         {
             return _context.Routes.ToList();
         }
+
+        // Retrieve a route by ID
+        public Route GetById(int id)
+        {
+            return _context.Routes.Find(id);
+        }
+
+
     }
 }
