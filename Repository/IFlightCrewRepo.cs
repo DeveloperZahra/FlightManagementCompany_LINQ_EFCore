@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     /// which represents the many-to-many relationship between Flights and CrewMembers.
     public interface IFlightCrewRepo
     {
-        void AddFlightCrew(FlightCrew flightCrew);
+        void AddFlightCrew(FlightCrew flightCrew);//Adds a new flight crew association to the underlying data store
         void DeleteFlightCrew(int id);
         IEnumerable<FlightCrew> GetAllFlightCrews();
         FlightCrew GetFlightCrewById(int id);
