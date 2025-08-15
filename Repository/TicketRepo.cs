@@ -28,6 +28,11 @@ namespace FlightManagementCompany.Repository
             return _context.Tickets.ToList();
         }
 
+        // Retrieve a ticket by ID
+        public Ticket GetTicketById(int TicketId)
+        {
+            return _context.Tickets.Find(TicketId);
+        }
 
 
 
