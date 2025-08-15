@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
         //  Adds a new flight record to the database
         public void AddFlight(Flight flight)
         {
-            _context.Flights.Add(flight);
+            _context.Flights.Add(flight);// Adds the new entity to the context.
             _context.SaveChanges();
         }
 
