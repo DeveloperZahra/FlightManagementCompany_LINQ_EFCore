@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Models
         public Aircraft Aircrafts { get; set; }
 
         // navigation property to route
-        public Route Route { get; set; } // Navigation property to Route
+        public Route Routes { get; set; } // Navigation property to Route
 
 
 
