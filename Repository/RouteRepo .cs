@@ -24,21 +24,28 @@ namespace FlightManagementCompany.Repository
             }
 
         // Retrieve all routes
-        public IEnumerable<Route> GetAll()
+        public IEnumerable<Route> GetAllRoutes()
         {
             return _context.Routes.ToList();
         }
 
         // Retrieve a route by ID
-        public Route GetById(int id)
+        public Route GetRouteById(int RouteId)
         {
-            return _context.Routes.Find(id);
+            return _context.Routes.Find(RouteId);
         }
 
         // Add a new route
-        public void Add(Route route)
+        public void AddRoute(Route route)
         {
             _context.Routes.Add(route);
+            _context.SaveChanges();
+        }
+
+        // Update an existing route
+        public void UpdateRoute(Route route)
+        {
+            _context.Routes.Update(route);
             _context.SaveChanges();
         }
 
