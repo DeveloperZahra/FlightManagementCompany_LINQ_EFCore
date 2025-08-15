@@ -29,6 +29,7 @@ namespace FlightManagementCompany.Models
         // navigation to origin airport
         [InverseProperty("OriginRoute")]
         public Airport OriginAirport { get; set; }
+
         // navigation to Destination airport
         [InverseProperty("DistenationRoute")]
         public Airport DistenationAirport { get; set; }
