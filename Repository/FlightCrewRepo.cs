@@ -12,6 +12,8 @@ namespace FlightManagementCompany.Repository
 /// Note: The class name is "FlightCrewRepo" but the methods manage the "Flight" entity.
     public class FlightCrewRepo
     {
+        // A private, read-only field to hold the database context.
+        // This context is the bridge between the application's models and the database.
         private readonly FlightDbContext _context;
 
         public FlightCrewRepo(FlightDbContext context)
