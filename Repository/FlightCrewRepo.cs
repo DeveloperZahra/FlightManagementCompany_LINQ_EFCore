@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
             _context = context;
         }
 
-        // Retrieve all flights
+        //// Retrieves all flight records from the database
         public IEnumerable<Flight> GetAllFlights()
         {
             return _context.Flights].ToList(); 
