@@ -9,7 +9,7 @@ namespace FlightManagementCompany.Repository
         void AddRoute(Route route);// Adds a new route to the underlying data store
         void DeleteRoute(int RouteId);//Deletes a route from the data store based on its unique ID
         IEnumerable<Route> GetAllRoutes();//Retrieves all routes from the data store
-        Route GetRouteById(int RouteId);
+        Route GetRouteById(int RouteId);//Retrieves a single route by its unique ID
         void UpdateRoute(Route route);
     }
 }
