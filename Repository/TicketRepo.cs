@@ -34,7 +34,12 @@ namespace FlightManagementCompany.Repository
             return _context.Tickets.Find(TicketId);
         }
 
-
+        // Add a new ticket
+        public void AddTicket(Ticket ticket)
+        {
+            _context.Tickets.Add(ticket);
+            _context.SaveChanges();
+        }
 
 
 
