@@ -28,5 +28,10 @@ namespace FlightManagementCompany.Models
         // Role of the crew member on this specific flight
         [Required]
         public string RoleOnFlight { get; set; }
+
+
+        public Flight Flights { get; set; } // Navigation property to Flight
+
+        public CrewMember CrewMember { get; set; } // Navigation property to CrewMember
     }
 }
