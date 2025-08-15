@@ -28,6 +28,11 @@ namespace FlightManagementCompany.Repository
             return _context.Passengers.ToList();
         }
 
+        // Retrieve a passenger by ID
+        public Passenger GetpassengerById(int id)
+        {
+            return _context.Passengers.Find(id);
+        }
 
 
 
