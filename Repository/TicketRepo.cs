@@ -48,6 +48,17 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
+        // Delete a ticket by ID
+        public void DeleteTicket(int TicketId)
+        {
+            var ticket = _context.Tickets.Find(TicketId);
+            if (ticket != null)
+            {
+                _context.Tickets.Remove(ticket);
+                _context.SaveChanges();
+            }
+        }
+
 
 
     }
