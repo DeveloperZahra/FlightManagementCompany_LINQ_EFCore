@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-   // This repository class handles all data access operations for the Flight entity.
-/// It provides a connection to the database context to perform these operations.
-    public class FlightRepo
+    // This repository class handles all data access operations for the Flight entity.
+    /// It provides a connection to the database context to perform these operations.
+    public class FlightRepo : IFlightRepo
     {
         // A private, read-only field to hold the database context.
         // This is the bridge between the application's models and the database
         private readonly FlightDbContext _context;
 
-       // Initializes a new instance of the FlightRepo class.
-    /// This constructor receives the database context via dependency injection
+        // Initializes a new instance of the FlightRepo class.
+        /// This constructor receives the database context via dependency injection
         public FlightRepo(FlightDbContext context)
         {
             _context = context;
