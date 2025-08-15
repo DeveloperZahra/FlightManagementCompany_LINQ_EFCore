@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Models
     {
         // Primary Key for the CrewMember entity
         [Key]
-        public int CrewId { get; set; } 
+        public int CrewId { get; set; }
 
         // Full name of the crew member
         [Required]
@@ -23,13 +23,23 @@ namespace FlightManagementCompany.Models
 
         // Role of the crew member (e.g., Pilot, CoPilot, FlightAttendant)
         [Required]
-        public string Role { get; set; } 
+        public string CrewRole { get; set; }
 
         // License number, nullable for non-pilot roles
         public string? LicenseNo { get; set; }
 
         // Navigation property for the many-to-many relationship with flights
-        public ICollection<FlightCrew> FlightCrews { get; set; }
+        public ICollection<FlightCrew> FlightCrews { get; set; } = new List<FlightCrew>();
 
+    
+    // Enum for crew roles
+
+    public enum CrewRole
+    {
+        Pilot,
+        CoPilot,
+        FlightAttendant
     }
+
+}
 }
