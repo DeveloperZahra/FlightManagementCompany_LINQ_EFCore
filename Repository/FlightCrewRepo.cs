@@ -24,21 +24,28 @@ namespace FlightManagementCompany.Repository
         }
 
         // Retrieve all flight crew assignments
-        public IEnumerable<FlightCrew> GetAll()
+        public IEnumerable<FlightCrew> GetAllFlightCrews()
         {
             return _context.FlightCrews.ToList();
         }
 
         // Retrieve a flight crew assignment by ID
-        public FlightCrew GetById(int id)
+        public FlightCrew GetFlightCrewById(int id)
         {
             return _context.FlightCrews.Find(id);
         }
 
         // Add a new flight crew assignment
-        public void Add(FlightCrew flightCrew)
+        public void AddFlightCrew(FlightCrew flightCrew)
         {
             _context.FlightCrews.Add(flightCrew);
+            _context.SaveChanges();
+        }
+
+        // Update an existing flight crew assignment
+        public void UpdateFlightCrew(FlightCrew flightCrew)
+        {
+            _context.FlightCrews.Update(flightCrew);
             _context.SaveChanges();
         }
     }
