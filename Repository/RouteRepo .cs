@@ -15,6 +15,8 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _context;
 
+        //Initializes a new instance of the RouteRepository class.
+    /// This constructor receives the database context via dependency injection.
             public RouteRepo(FlightDbContext context)
             {
                 _context = context;
