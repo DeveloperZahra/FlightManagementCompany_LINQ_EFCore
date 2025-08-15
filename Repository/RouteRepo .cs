@@ -49,6 +49,17 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
+        // Delete a route by ID
+        public void DeleteRoute(int RouteId)
+        {
+            var route = _context.Routes.Find(RouteId);
+            if (route != null)
+            {
+                _context.Routes.Remove(route);
+                _context.SaveChanges();
+            }
+        }
+
 
     }
 }
