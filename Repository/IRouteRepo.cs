@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
     public interface IRouteRepo
     {
         void AddRoute(Route route);// Adds a new route to the underlying data store
-        void DeleteRoute(int RouteId);
+        void DeleteRoute(int RouteId);//Deletes a route from the data store based on its unique ID
         IEnumerable<Route> GetAllRoutes();
         Route GetRouteById(int RouteId);
         void UpdateRoute(Route route);
