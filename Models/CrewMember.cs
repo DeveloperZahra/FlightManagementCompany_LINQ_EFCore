@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Models
 
         // Role of the crew member (e.g., Pilot, CoPilot, FlightAttendant)
         [Required]
-        public string CrewRole { get; set; }
+        public  CrewRole Role { get; set; }
 
         // License number, nullable for non-pilot roles
         public string? LicenseNo { get; set; }
