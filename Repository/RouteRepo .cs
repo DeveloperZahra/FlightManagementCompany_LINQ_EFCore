@@ -35,6 +35,13 @@ namespace FlightManagementCompany.Repository
             return _context.Routes.Find(id);
         }
 
+        // Add a new route
+        public void Add(Route route)
+        {
+            _context.Routes.Add(route);
+            _context.SaveChanges();
+        }
+
 
     }
 }
