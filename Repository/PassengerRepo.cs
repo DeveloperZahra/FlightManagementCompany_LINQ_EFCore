@@ -22,12 +22,18 @@ namespace FlightManagementCompany.Repository
                 _context = context;
             }
 
-
-
-
-
-
-
-
+        // Retrieve all passengers
+        public IEnumerable<Passenger> GetAllPassengers()
+        {
+            return _context.Passengers.ToList();
         }
+
+
+
+
+
+
+
+
+    }
 }
