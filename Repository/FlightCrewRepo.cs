@@ -55,7 +55,7 @@ namespace FlightManagementCompany.Repository
             var flight = _context.Flights.Find(FlightId); // Finds the flight record by its ID.
             if (flight != null)  // Checks if the flight was found before attempting to delete it
             {
-                _context.Flights.Remove(flight);
+                _context.Flights.Remove(flight);  // Removes the entity from the context.
                 _context.SaveChanges();
             }
         }
