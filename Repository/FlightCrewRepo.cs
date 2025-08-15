@@ -49,7 +49,7 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
-        // Delete a flight by ID
+         // Deletes a flight record from the database by its ID.
         public void DeleteFlight(int FlightId)
         {
             var flight = _context.Flights.Find(FlightId);
