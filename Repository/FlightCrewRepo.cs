@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace FlightManagementCompany.Repository
 {
     //This repository class handles all data access operations for the Flight entity.
-/// It provides methods for performing CRUD operations on flight records.
-/// Note: The class name is "FlightCrewRepo" but the methods manage the "Flight" entity.
-    public class FlightCrewRepo
+    /// It provides methods for performing CRUD operations on flight records.
+    /// Note: The class name is "FlightCrewRepo" but the methods manage the "Flight" entity.
+    public class FlightCrewRepo : IFlightCrewRepo
     {
         // A private, read-only field to hold the database context.
         // This context is the bridge between the application's models and the database.
@@ -59,4 +59,4 @@ namespace FlightManagementCompany.Repository
                 _context.SaveChanges();
             }
         }
-}
+    }
