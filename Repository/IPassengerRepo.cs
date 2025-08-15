@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void Deletepassenger(int PassengerId);//Deletes a passenger from the data store based on their unique ID
         IEnumerable<Passenger> GetAllPassengers();//Retrieves all passengers from the data store.
         Passenger GetpassengerById(int PassengerId);//Retrieves a single passenger by their unique ID
-        void UpdatePassenger(Passenger passenger);
+        void UpdatePassenger(Passenger passenger);//Updates an existing passenger record in the data store.
     }
 }
