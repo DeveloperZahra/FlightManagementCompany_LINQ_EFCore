@@ -40,6 +40,6 @@ namespace FlightManagementCompany.Models
         public Booking Booking { get; set; }
 
         // Navigation property for baggage associated with this ticket
-        public ICollection<Baggage> BaggageItems { get; set; }
+        public ICollection<Baggage> Baggages { get; set; } = new List<Baggage>();
     }
 }
