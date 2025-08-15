@@ -26,10 +26,12 @@ namespace FlightManagementCompany.Models
         // Notes on the maintenance performed
         public string? Notes { get; set; }
 
+
         // Foreign Key to the Aircraft
         public int AircraftId { get; set; }
         [ForeignKey("AircraftId")]
-        public Aircraft Aircraft { get; set; }
+        public Aircraft Aircraft { get; set; }//navigation property to Aircraft
+        
 
     }
 }
