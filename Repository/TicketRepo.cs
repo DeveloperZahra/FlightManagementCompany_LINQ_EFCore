@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-    public  class TicketRepo
+    //This repository class handles all data access operations for the Ticket entity.
+    /// It provides a connection to the database context to perform these operations.
+    public class TicketRepo
     {
+       
+            private readonly FlightDbContext _context;
+
+            public TicketRepo(FlightDbContext context)
+            {
+                _context = context;
+            }
+
+
+
+
+
+
+
     }
 }
