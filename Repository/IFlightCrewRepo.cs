@@ -11,6 +11,6 @@ namespace FlightManagementCompany.Repository
         void DeleteFlightCrew(int id);//Deletes a flight crew association from the data store based on its unique ID
         IEnumerable<FlightCrew> GetAllFlightCrews();//Retrieves all flight crew associations from the data store.
         FlightCrew GetFlightCrewById(int id);//Retrieves a single flight crew association by its unique ID
-        void UpdateFlightCrew(FlightCrew flightCrew);//
+        void UpdateFlightCrew(FlightCrew flightCrew);// Updates an existing flight crew association record in the data store
     }
 }
