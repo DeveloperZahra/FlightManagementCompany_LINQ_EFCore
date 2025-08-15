@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
     {
         void AddTicket(Ticket ticket);// Adds a new ticket to the underlying data store
         void DeleteTicket(int TicketId);//Deletes a ticket from the data store based on its unique ID
-        IEnumerable<Ticket> GetAllTickets();
+        IEnumerable<Ticket> GetAllTickets();//Retrieves all tickets from the data store
         Ticket GetTicketById(int TicketId);
         void UpdateTicket(Ticket ticket);
     }
