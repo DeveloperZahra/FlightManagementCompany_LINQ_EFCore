@@ -48,5 +48,15 @@ namespace FlightManagementCompany.Repository
             _context.FlightCrews.Update(flightCrew);
             _context.SaveChanges();
         }
-    }
+
+        // Delete a flight crew assignment by ID
+        public void DeleteFlightCrew(int id)
+        {
+            var flightCrew = _context.FlightCrews.Find(id);
+            if (flightCrew != null)
+            {
+                _context.FlightCrews.Remove(flightCrew);
+                _context.SaveChanges();
+            }
+        }
 }
