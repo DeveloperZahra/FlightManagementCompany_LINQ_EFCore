@@ -29,9 +29,9 @@ namespace FlightManagementCompany.Repository
         }
 
         // Retrieve a passenger by ID
-        public Passenger GetpassengerById(int id)
+        public Passenger GetpassengerById(int PassengerId)
         {
-            return _context.Passengers.Find(id);
+            return _context.Passengers.Find(PassengerId);
         }
 
         // Add a new passenger
@@ -41,6 +41,12 @@ namespace FlightManagementCompany.Repository
             _context.SaveChanges();
         }
 
+        // Update an existing passenger
+        public void UpdatePassenger(Passenger passenger)
+        {
+            _context.Passengers.Update(passenger);
+            _context.SaveChanges();
+        }
 
 
 
