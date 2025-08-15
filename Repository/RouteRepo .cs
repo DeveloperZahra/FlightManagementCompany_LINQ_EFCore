@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightManagementCompany.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace FlightManagementCompany.Repository
                 _context = context;
             }
 
-
+        // Retrieve all routes
+        public IEnumerable<Route> GetAll()
+        {
+            return _context.Routes.ToList();
+        }
     }
 }
