@@ -29,5 +29,10 @@ namespace FlightManagementCompany.Repository
             return _context.FlightCrews.ToList();
         }
 
+        // Retrieve a flight crew assignment by ID
+        public FlightCrew GetById(int id)
+        {
+            return _context.FlightCrews.Find(id);
+        }
     }
 }
