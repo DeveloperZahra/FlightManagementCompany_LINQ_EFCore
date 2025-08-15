@@ -28,9 +28,9 @@ namespace FlightManagementCompany.Models
 
 
         // Navigation property for related flights
-        public ICollection<Flight> Flights { get; set; }
+        public ICollection<Flight> Flights { get; set; }= new List<Flight>();
 
         // Navigation property for related maintenance records
-        public ICollection<AircraftMaintenance> MaintenanceRecords { get; set; }
+        public ICollection<AircraftMaintenance> AircraftMaintenance { get; set; } = new List<AircraftMaintenance>();
     }
 }
