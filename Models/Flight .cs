@@ -42,6 +42,15 @@ namespace FlightManagementCompany.Models
         [ForeignKey("AircraftId")]
         public Aircraft Aircraft { get; set; }
 
+
+        // collection navigation to aircraft
+        public Aircraft Aircrafts { get; set; }
+
+        // navigation property to route
+        public Route Route { get; set; } // Navigation property to Route
+
+
+
         // Navigation property for the many-to-many relationship with crew
         public ICollection<FlightCrew> FlightCrews { get; set; }
 
