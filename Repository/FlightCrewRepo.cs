@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
             return _context.Flights.ToList(); // Accesses the Flights DbSet and retrieves all records, returning them as a list.
         }
 
-        // Retrieve a flight by ID
+        // Retrieves a single flight by its unique ID
         public Flight GetFlightById(int FlightId)
         {
             return _context.Flights.Find(FlightId);
