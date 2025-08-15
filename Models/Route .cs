@@ -21,6 +21,7 @@ namespace FlightManagementCompany.Models
 
         [Required]
         public int OriginAirportId { get; set; } // Foriegn key to airport
+
         [Required]
         public int DestinationAirportId { get; set; } // Foriegn key to airport
 
