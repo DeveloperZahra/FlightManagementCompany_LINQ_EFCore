@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,15 @@ namespace FlightManagementCompany.Models
 
         // TimeZone of the airport
         [Required]
-        public string TimeZone { get; set; } 
+        public string TimeZone { get; set; }
+
+        //This property represents all routes where the current airport is the origin
+
+       [InverseProperty("OriginAirport")]
+        public ICollection<Route> OriginRoute { get; set; } = new List<Route>();
+
+        [InverseProperty("DistenationAirport")]
+        public ICollection<Route> DistenationRoute { get; set; } = new List<Route>();
 
     }
 }
