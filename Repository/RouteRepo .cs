@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace FlightManagementCompany.Repository
 {
     //This repository class handles all data access operations for the Route entity.
-/// It provides a connection to the database context to perform these operations
-    public class RouteRepo
+    /// It provides a connection to the database context to perform these operations
+    public class RouteRepo : IRouteRepo
     {
         // A private, read-only field to hold the database context.
         // This is the bridge between the application's models and the database
@@ -17,11 +17,11 @@ namespace FlightManagementCompany.Repository
         private readonly FlightDbContext _context;
 
         //Initializes a new instance of the RouteRepository class.
-    /// This constructor receives the database context via dependency injection.
-            public RouteRepo(FlightDbContext context)
-            {
-                _context = context;
-            }
+        /// This constructor receives the database context via dependency injection.
+        public RouteRepo(FlightDbContext context)
+        {
+            _context = context;
+        }
 
         // Retrieve all routes
         public IEnumerable<Route> GetAllRoutes()
