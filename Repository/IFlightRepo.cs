@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
 /// It specifies the core data access operations (CRUD) for the Flight model.
     public interface IFlightRepo
     {
-        void AddFlight(Flight flight);
+        void AddFlight(Flight flight); //Adds a new flight to the underlying data store.
         void DeleteFlight(int FlightId);
         IEnumerable<Flight> GetAllFlights();
         Flight GetFlightById(int FlightId);
