@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         void DeleteFlight(int FlightId);//Deletes a flight from the data store based on its unique ID
         IEnumerable<Flight> GetAllFlights();//Retrieves all flights from the data store
         Flight GetFlightById(int FlightId);//Retrieves a single flight by its unique ID
-        void UpdateFlight(Flight flight);
+        void UpdateFlight(Flight flight);//Updates an existing flight record in the data store.
     }
 }
