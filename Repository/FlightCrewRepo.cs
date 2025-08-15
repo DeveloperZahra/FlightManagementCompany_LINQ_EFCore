@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Repository
         // Updates an existing flight record in the database
         public void UpdateFlight(Flight flight)
         {
-            _context.Flights.Update(flight);
+            _context.Flights.Update(flight);   // Marks the entity as updated
             _context.SaveChanges();
         }
 
