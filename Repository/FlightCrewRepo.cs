@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
         // Retrieves a single flight by its unique ID
         public Flight GetFlightById(int FlightId)
         {
-            return _context.Flights.Find(FlightId);
+            return _context.Flights.Find(FlightId);// Uses the efficient Find() method to look up the flight by its primary key.
         }
 
         // Add a new flight
