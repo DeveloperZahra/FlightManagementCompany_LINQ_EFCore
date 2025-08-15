@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
 /// It specifies the core data access operations (CRUD) for the Passenger model.
     public interface IPassengerRepo
     {
-        void Addpassenger(Passenger passenger);
+        void Addpassenger(Passenger passenger);//Adds a new passenger to the underlying data store
         void Deletepassenger(int PassengerId);
         IEnumerable<Passenger> GetAllPassengers();
         Passenger GetpassengerById(int PassengerId);
