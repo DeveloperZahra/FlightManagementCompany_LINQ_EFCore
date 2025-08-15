@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Models
         //This property represents all routes where the current airport is the origin
 
        [InverseProperty("OriginAirport")]
-        public ICollection<Route> OriginRoute { get; set; } = new List<Route>();
+        public ICollection<Route> OriginRoute { get; set; } = new List<Route>(); //corresponds to the "OriginAirport" navigation property in the Route entity
 
         [InverseProperty("DistenationAirport")]
         public ICollection<Route> DistenationRoute { get; set; } = new List<Route>();
