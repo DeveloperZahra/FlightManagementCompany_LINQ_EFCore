@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
             return _context.Flights.Find(FlightId);// Uses the efficient Find() method to look up the flight by its primary key.
         }
 
-        // Add a new flight
+        //  Adds a new flight record to the database
         public void AddFlight(Flight flight)
         {
             _context.Flights.Add(flight);
