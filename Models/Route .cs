@@ -19,13 +19,10 @@ namespace FlightManagementCompany.Models
         [Required]
         public int DistanceKm { get; set; }
 
-        // City of origin
         [Required]
-        public int OriginCity { get; set; }
-
-        //City of destination
+        public int OriginAirportId { get; set; } // Foriegn key to airport
         [Required]
-        public string DestinationCity { get; set; }
+        public int DestinationAirportId { get; set; } // Foriegn key to airport
 
 
         // Navigation property for related flights
