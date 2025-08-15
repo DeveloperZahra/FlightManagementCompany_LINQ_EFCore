@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
     public interface IFlightCrewRepo
     {
         void AddFlightCrew(FlightCrew flightCrew);//Adds a new flight crew association to the underlying data store
-        void DeleteFlightCrew(int id);
+        void DeleteFlightCrew(int id);//Adds a new flight crew association to the underlying data store
         IEnumerable<FlightCrew> GetAllFlightCrews();
         FlightCrew GetFlightCrewById(int id);
         void UpdateFlightCrew(FlightCrew flightCrew);
