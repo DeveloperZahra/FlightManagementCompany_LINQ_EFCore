@@ -34,6 +34,13 @@ namespace FlightManagementCompany.Repository
             return _context.Passengers.Find(id);
         }
 
+        // Add a new passenger
+        public void Addpassenger(Passenger passenger)
+        {
+            _context.Passengers.Add(passenger);
+            _context.SaveChanges();
+        }
+
 
 
 
