@@ -34,5 +34,12 @@ namespace FlightManagementCompany.Repository
         {
             return _context.FlightCrews.Find(id);
         }
+
+        // Add a new flight crew assignment
+        public void Add(FlightCrew flightCrew)
+        {
+            _context.FlightCrews.Add(flightCrew);
+            _context.SaveChanges();
+        }
     }
 }
