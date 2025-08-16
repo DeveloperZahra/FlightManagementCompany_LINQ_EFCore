@@ -21,6 +21,7 @@ namespace FlightManagementCompany_LINQ_EFCore
         public DbSet<Aircraft> Aircrafts { get; set; }                // Table for Aircrafts
         public DbSet<AircraftMaintenance> AircraftMaintenances { get; set; } // Table for Aircraft Maintenances
         public DbSet<Airport> Airports { get; set; }                  // Table for Airports
+        public DbSet<Baggage> Baggages { get; set; }                  // Table for Baggages
 
 
     }
