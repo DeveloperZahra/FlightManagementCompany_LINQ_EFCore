@@ -32,6 +32,9 @@ namespace FlightManagementCompany.Models
         [ForeignKey("PassengerId")]
         public Passenger Passenger { get; set; }
 
+        // Foreign key to Flight
+        [Required]
+        public int FlightId { get; set; }
 
         // Navigation property for tickets in this booking
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
