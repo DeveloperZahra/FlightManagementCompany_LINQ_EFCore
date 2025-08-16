@@ -25,6 +25,7 @@ namespace FlightManagementCompany_LINQ_EFCore
         public DbSet<Booking> booking { get; set; }                  // Table for Booking
         public DbSet<CrewMember> CrewMembers { get; set; }            // Table for Crew Members
         public DbSet<Flight> Flights { get; set; }                    // Table for Flights
+        public DbSet<FlightCrew> FlightCrews { get; set; }            // Table for Flight Crew assignments
 
 
     }
