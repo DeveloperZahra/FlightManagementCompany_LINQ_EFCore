@@ -35,6 +35,6 @@ namespace FlightManagementCompany.Models
 
 
         // Navigation property for bookings made by this passenger
-        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        public ICollection<Booking> booking { get; set; } = new List<Booking>();
     }
 }
