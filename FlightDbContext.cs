@@ -53,6 +53,7 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             // Relationship: One Booking -> Many Tickets
             modelBuilder.Entity<Ticket>()
+              .HasOne(t => t.booking)           // Ticket belongs to one Booking
 
 
 
