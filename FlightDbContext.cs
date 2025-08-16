@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using FlightManagementCompany.Models;
+using Microsoft.Extensions.Options;
 
 namespace FlightManagementCompany_LINQ_EFCore
 {
@@ -34,6 +35,20 @@ namespace FlightManagementCompany_LINQ_EFCore
        // It allows customization of how the entities map to the database schema
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+
+            // Relationship: One Passenger -> Many Bookings
+            modelBuilder.Entity<Booking>()
+
+
+
+
+
+
+
+
+
 
 
         }
