@@ -68,6 +68,9 @@ namespace FlightManagementCompany_LINQ_EFCore
            .WithMany(c => c.FlightCrews)     // CrewMember can be assigned to many Flights
            .HasForeignKey(fc => new { fc.FlightId, fc.CrewId }); // Composite PK to prevent duplicates
 
+            // Relationship: Route -> Origin Airport
+            modelBuilder.Entity<Route>()
+
 
 
 
