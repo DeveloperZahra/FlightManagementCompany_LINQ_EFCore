@@ -17,6 +17,7 @@ namespace FlightManagementCompany_LINQ_EFCore
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-J26O8DP\\SQLEXPRESS01 ;Initial Catalog=FlightManagementDB;Integrated Security=True;TrustServerCertificate=True");
         }
 
+        // DbSets represent tables in the database for each entity
 
 
 
