@@ -71,7 +71,8 @@ namespace FlightManagementCompany_LINQ_EFCore
             // Relationship: Route -> Origin Airport
             modelBuilder.Entity<Route>()
             .HasOne(r => r.OriginAirport)     // Route starts from one Origin Airport
-
+            .WithMany(a => a.DistenationAirport) // Airport can have many departing Routes
+                .HasForeignKey(r => r.OriginAirportId)
 
 
 
