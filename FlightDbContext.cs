@@ -65,6 +65,8 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             modelBuilder.Entity<FlightCrew>()
            .HasOne(fc => fc.CrewMember)      // FlightCrew refers to one CrewMember
+           .WithMany(c => c.FlightCrews)     // CrewMember can be assigned to many Flights
+           .HasForeignKey(fc => new { fc.FlightId, fc.CrewId }); // Composite PK to prevent duplicates
 
 
 
