@@ -11,7 +11,11 @@ namespace FlightManagementCompany_LINQ_EFCore
     // DbContext class responsible for interacting with the Flight Management database
     public class FlightDbContext : DbContext
     {
-
+        // Constructor that accepts DbContextOptions (used for dependency injection)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-J26O8DP\\SQLEXPRESS01 ;Initial Catalog=FlightManagementDB;Integrated Security=True;TrustServerCertificate=True");
+        }
 
 
 
