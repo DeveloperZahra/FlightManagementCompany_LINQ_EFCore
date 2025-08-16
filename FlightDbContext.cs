@@ -70,12 +70,17 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             // Relationship: Route -> Origin Airport
             modelBuilder.Entity<Route>()
-            .HasOne(r => r.OriginAirport)     // Route starts from one Origin Airport
-            .WithMany(a => a.DistenationAirport) // Airport can have many departing Routes
-            .HasForeignKey(r => r.OriginAirportId)
-            .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete issues
+           .HasOne(r => r.OriginAirport)           // Route starts from one Origin Airport
+           .WithMany(a => a.OriginRoute)          // Airport can have many routes starting here
+          .HasForeignKey(r => r.OriginAirportId)
+          .OnDelete(DeleteBehavior.Restrict);     // Prevents cascading delete issues
 
-
+            // Relationship: Route -> Destination Airport
+            modelBuilder.Entity<Route>()
+           .HasOne(r => r.DistenationAirport)      // Route ends at one Destination Airport
+           .WithMany(a => a.DistenationRoute)     // Airport can have many routes arriving here
+           .HasForeignKey(r => r.DestinationAirportId)
+           .OnDelete(DeleteBehavior.Restrict);
 
 
         }
