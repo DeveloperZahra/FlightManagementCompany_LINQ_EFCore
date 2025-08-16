@@ -9,8 +9,8 @@ using FlightManagementCompany_LINQ_EFCore;
 namespace FlightManagementCompany.Repository
 {
     //This repository class handles all data access operations for the Baggage entity.
-/// It provides methods for performing CRUD operations on baggage records
-    public class BaggageRepo
+    /// It provides methods for performing CRUD operations on baggage records
+    public class BaggageRepo : IBaggageRepo
     {
         // A private, read-only field to hold the database context.
         // This context is the entry point to the database for this repository
