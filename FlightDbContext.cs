@@ -18,7 +18,7 @@ namespace FlightManagementCompany_LINQ_EFCore
         }
 
         // DbSets represent tables in the database for each entity
-
+        public DbSet<Aircraft> Aircrafts { get; set; }                // Table for Aircrafts
 
 
     }
