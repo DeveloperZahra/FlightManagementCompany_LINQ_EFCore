@@ -51,7 +51,8 @@ namespace FlightManagementCompany_LINQ_EFCore
             .WithMany( f => f.booking)        // Flight can have many Bookings
             .HasForeignKey( b => b.FlightId);
 
-
+            // Relationship: One Booking -> Many Tickets
+            modelBuilder.Entity<Ticket>()
 
 
 
