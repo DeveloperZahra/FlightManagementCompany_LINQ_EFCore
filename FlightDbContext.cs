@@ -30,6 +30,12 @@ namespace FlightManagementCompany_LINQ_EFCore
         public DbSet<Route> Routes { get; set; }                      // Table for Routes
         public DbSet<Ticket> Tickets { get; set; }                    // Table for Tickets
 
+        // This method is used to configure entity relationships, constraints, and table mappings
+       // It allows customization of how the entities map to the database schema
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
+
+        }
     }
 }
