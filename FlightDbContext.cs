@@ -40,6 +40,7 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             // Relationship: One Passenger -> Many Bookings
             modelBuilder.Entity<Booking>()
+           .HasOne(b => b.Passenger)         // Booking is linked to one Passenger
 
 
 
