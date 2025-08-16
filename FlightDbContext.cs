@@ -70,6 +70,7 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             // Relationship: Route -> Origin Airport
             modelBuilder.Entity<Route>()
+            .HasOne(r => r.OriginAirport)     // Route starts from one Origin Airport
 
 
 
