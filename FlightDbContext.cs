@@ -57,7 +57,8 @@ namespace FlightManagementCompany_LINQ_EFCore
               .WithMany(b => b.Tickets)         // Booking can have many Tickets
               .HasForeignKey(t => t.BookingId);
 
-
+            // Relationship: Many-to-Many (Flight ↔ CrewMember) via FlightCrew
+            modelBuilder.Entity<FlightCrew>()
 
 
 
