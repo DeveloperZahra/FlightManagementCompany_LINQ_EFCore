@@ -47,6 +47,7 @@ namespace FlightManagementCompany.Models
         public ICollection<Route> DistenationRoute { get; set; } = new List<Route>(); //  the "DestinationAirport" navigation property in the Route entity
 
 
+
     }
 }
 
