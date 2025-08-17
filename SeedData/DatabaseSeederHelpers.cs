@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FlightManagementCompany.Repository;
 using FlightManagementCompany_LINQ_EFCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FlightManagementCompany.SeedData
 {
@@ -10,11 +11,11 @@ namespace FlightManagementCompany.SeedData
 /// This class orchestrates the creation of all entities, ensuring referential integrity.
     public static class DatabaseSeederHelpers
     {
+
         // Creates a complete set of sample data for the Flight Management System.
         /// This method uses the repository pattern to interact with each database entity.
-       
         public static void CreateSampleData(
-            FlightDbContext db,
+            FlightDbContext db, //The primary database context, used for overall management (e.g., saving changes)
             IAirportRepo airportRepo,
             IRouteRepo routeRepo,
             IAircraftRepo aircraftRepo,
