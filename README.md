@@ -166,3 +166,16 @@ All non-key attributes are dependent only on the primary key.
 DTO stands for Data Transfer Object. It is a design pattern used in programming applications to simplify the process of transferring data between different layers of an application, such as transferring data from the database layer to the front-end layer or vice versa.
 
 Simply put, a DTO is an object (class) that contains only properties and no behaviors or business logic. Its primary purpose is to group data into a single object to facilitate its sending and receiving across a network or between layers.
+
+
+### Why use DTOs in C# projects? 🤔
+
+Using DTOs has several benefits, especially in projects that use a layered architecture, such as an airline flight management system project:
+
+Separation of Concerns: DTOs separate database models (such as Aircraft or Flight) from models exposed to the user via an API. This prevents internal database details from being leaked to the API.
+
+Performance Improvement: DTOs allow you to choose only the properties you need. For example, instead of sending all the properties of a Passenger object to the front-end, you can create a PassengerDto that contains only FullName and PassportNo, reducing the amount of data transferred.
+
+Data Hiding: You can control the data displayed to the user. If a CrewMember object contains a Salary field, you can create a CrewMemberDto that doesn't contain this field to protect sensitive information.
+
+Preventing Over-Posting Attacks: When you use DTOs for API inputs, you ensure that the user can only submit the data you specify in the DTO, preventing the possibility of unauthorized field updates.
