@@ -276,3 +276,6 @@ return Ok(flightDetails); // Return the DTO as a JSON response
 }
 ```
 
+### 📝Summary:
+This code demonstrates how DTOs can be used to separate the internal data model from the external API. Instead of returning EF Core objects, which may contain circular references or sensitive data, a simple, custom DTO is returned containing only the data the client needs.
+
