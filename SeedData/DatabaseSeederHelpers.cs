@@ -10,6 +10,9 @@ namespace FlightManagementCompany.SeedData
 /// This class orchestrates the creation of all entities, ensuring referential integrity.
     public static class DatabaseSeederHelpers
     {
+        // Creates a complete set of sample data for the Flight Management System.
+        /// This method uses the repository pattern to interact with each database entity.
+       
         public static void CreateSampleData(
             FlightDbContext db,
             IAirportRepo airportRepo,
