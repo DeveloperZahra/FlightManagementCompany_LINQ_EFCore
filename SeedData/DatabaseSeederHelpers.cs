@@ -94,7 +94,25 @@ namespace FlightManagementCompany.SeedData
             }
 
 
-
+            // ===== FLIGHTS =====
+            if (!flightRepo.GetAllFlights().Any())
+            {
+                var flights = new List<Flight>
+                {
+                    new Flight { RouteId = 1, AircraftId = 1, DepartureUtc = DateTime.Now.AddHours(2), ArrivalUtc = DateTime.Now.AddHours(4), Status = "Scheduled" },
+                    new Flight { RouteId = 2, AircraftId = 2, DepartureUtc = DateTime.Now.AddHours(3), ArrivalUtc = DateTime.Now.AddHours(5), Status = "Scheduled" },
+                    new Flight { RouteId = 3, AircraftId = 3, DepartureUtc = DateTime.Now.AddHours(4), ArrivalUtc = DateTime.Now.AddHours(6), Status = "Scheduled" },
+                    new Flight { RouteId = 4, AircraftId = 4, DepartureUtc = DateTime.Now.AddHours(5), ArrivalUtc = DateTime.Now.AddHours(7), Status = "Scheduled" },
+                    new Flight { RouteId = 5, AircraftId = 5, DepartureUtc = DateTime.Now.AddHours(6), ArrivalUtc = DateTime.Now.AddHours(8), Status = "Scheduled" },
+                    new Flight { RouteId = 6, AircraftId = 6, DepartureUtc = DateTime.Now.AddHours(7), ArrivalUtc = DateTime.Now.AddHours(9), Status = "Scheduled" },
+                    new Flight { RouteId = 7, AircraftId = 7, DepartureUtc = DateTime.Now.AddHours(8), ArrivalUtc = DateTime.Now.AddHours(10), Status = "Scheduled" },
+                    new Flight { RouteId = 8, AircraftId = 8, DepartureUtc = DateTime.Now.AddHours(9), ArrivalUtc = DateTime.Now.AddHours(12), Status = "Scheduled" },
+                    new Flight { RouteId = 9, AircraftId = 9, DepartureUtc = DateTime.Now.AddHours(10),ArrivalUtc = DateTime.Now.AddHours(13), Status = "Scheduled" },
+                    new Flight { RouteId = 10,AircraftId =10, DepartureUtc = DateTime.Now.AddHours(11),ArrivalUtc = DateTime.Now.AddHours(14), Status = "Scheduled" }
+                };      
+                foreach (var f in flights) flightRepo.AddFlight(f);
+                db.SaveChanges();
+            }
 
 
 
