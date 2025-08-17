@@ -179,3 +179,13 @@ Performance Improvement: DTOs allow you to choose only the properties you need. 
 Data Hiding: You can control the data displayed to the user. If a CrewMember object contains a Salary field, you can create a CrewMemberDto that doesn't contain this field to protect sensitive information.
 
 Preventing Over-Posting Attacks: When you use DTOs for API inputs, you ensure that the user can only submit the data you specify in the DTO, preventing the possibility of unauthorized field updates.
+
+### 📖Examples from the current project "Flight Management Company" demonstrate the importance of using DTOs:
+
+🏷️ RouteRevenueDto: Combines data from the Route and Flight entities to show route revenue.
+
+🏷️ CrewConflictDto: Used to display information about a potential conflict in a flight crew table, combining data from the CrewMember object and the Flight object.
+
+🏷️ PassengerItineraryDto: Combines passenger information with details of their flight itinerary.
+
+❗These examples demonstrate that DTOs are not only used to represent a single entity, but also to create custom models that combine data from multiple different entities to meet specific API requirements.
