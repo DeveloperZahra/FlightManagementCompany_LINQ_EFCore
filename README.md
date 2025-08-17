@@ -223,6 +223,7 @@ public List<CrewMemberDto> Crew { get; set; }
 
 Although object transformation logic is typically performed in the Service Layer, LINQ can be used in the Repository Layer to retrieve only the required data, improving performance.
 
+
 ```sql 
 // Inside FlightRepo
 public async Task<FlightDetailsDto> GetFlightDetailsById(int flightId)
