@@ -193,3 +193,65 @@ Preventing Over-Posting Attacks: When you use DTOs for API inputs, you ensure th
 ### 📖Code example demonstrating the use of DTOs:
 
 Let's say we want to create an endpoint in our API that displays flight information and crew details. Instead of returning the entire Flight and CrewMember objects, we can create a custom DTO containing only the required information.
+
+**1. Create DTOs:**
+
+```sql
+// A DTO to represent crew member information. It does not include sensitive fields such as the license number.
+public class CrewMemberDto
+{
+public int CrewId { get; set; }
+public string FullName { get; set; }
+public string Role { get; set; }
+}
+
+// A DTO to represent flight details. It includes a list of CrewMemberDto.
+public class FlightDetailsDto
+{
+public int FlightId { get; set; }
+public string FlightNumber { get; set; }
+public DateTime DepartureUtc { get; set; }
+public DateTime ArrivalUtc { get; set; }
+public string Status { get; set; }
+public string OriginAirportIATA { get; set; }
+public string DestinationAirportIATA { get; set; }
+public List<CrewMemberDto> Crew { get; set; }
+}
+```
+
+**2. Using DTOs in the Repository Layer:**
+
+Although object transformation logic is typically performed in the Service Layer, LINQ can be used in the Repository Layer to retrieve only the required data, improving performance.
+
+```sql 
+// Inside FlightRepo
+public async Task<FlightDetailsDto> GetFlightDetailsById(int flightId)
+{
+// Using LINQ to include associated entities and aggregate data into a DTO
+var flight = await _context.Flights
+.Include(f => f.Route)
+.Include(f => f.FlightCrews)
+.ThenInclude(fc => fc.CrewMember)
+.Where(f => f.FlightId == flightId)
+.Select(f => new FlightDetailsDto
+{
+FlightId = f.FlightId,
+FlightNumber = f.FlightNumber,
+DepartureUtc = f.DepartureUtc,
+ArrivalUtc = f.ArrivalUtc,
+Status = f.Status,
+OriginAirportIATA = f.Route.OriginAirport.IATA, 
+DestinationAirportIATA = f.Route.DestinationAirport.IATA, 
+Crew = f.FlightCrews.Select(fc => new CrewMemberDto 
+{ 
+CrewId = fc.CrewMember.CrewId, 
+FullName = fc.CrewMember.FullName, 
+Role = fc. RoleOnFlight 
+}).ToList() 
+}) 
+.FirstOrDefaultAsync(); 
+
+return flight;
+}
+```
+
