@@ -52,6 +52,27 @@ namespace FlightManagementCompany.SeedData
             }
 
 
+            // ===== ROUTES =====
+            if (!routeRepo.GetAllRoutes().Any())
+            {
+                var routes = new List<Route>
+                {
+                    new Route { OriginAirportId = 1, DestinationAirportId = 2, DistanceKm = 870 },   // Muscat -> Salalah
+                    new Route { OriginAirportId = 1, DestinationAirportId = 3, DistanceKm = 220 },   // Muscat -> Sohar
+                    new Route { OriginAirportId = 1, DestinationAirportId = 4, DistanceKm = 550 },   // Muscat -> Duqm
+                    new Route { OriginAirportId = 1, DestinationAirportId = 6, DistanceKm = 340 },   // Muscat -> Dubai
+                    new Route { OriginAirportId = 1, DestinationAirportId = 7, DistanceKm = 730 },   // Muscat -> Doha
+                    new Route { OriginAirportId = 1, DestinationAirportId = 8, DistanceKm = 1800 },  // Muscat -> Jeddah
+                    new Route { OriginAirportId = 1, DestinationAirportId = 9, DistanceKm = 2500 },  // Muscat -> Cairo
+                    new Route { OriginAirportId = 1, DestinationAirportId = 10,DistanceKm = 3800 }, // Muscat -> Bangkok
+                    new Route { OriginAirportId = 2, DestinationAirportId = 6, DistanceKm = 950 },   // Salalah -> Dubai
+                    new Route { OriginAirportId = 3, DestinationAirportId = 7, DistanceKm = 1100 }   // Sohar -> Doha
+                };
+                foreach (var r in routes) routeRepo.AddRoute(r);
+                db.SaveChanges();
+            }
+
+
         }
     }
 }
