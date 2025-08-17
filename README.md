@@ -189,3 +189,7 @@ Preventing Over-Posting Attacks: When you use DTOs for API inputs, you ensure th
 🏷️ PassengerItineraryDto: Combines passenger information with details of their flight itinerary.
 
 ❗These examples demonstrate that DTOs are not only used to represent a single entity, but also to create custom models that combine data from multiple different entities to meet specific API requirements.
+
+### 📖Code example demonstrating the use of DTOs:
+
+Let's say we want to create an endpoint in our API that displays flight information and crew details. Instead of returning the entire Flight and CrewMember objects, we can create a custom DTO containing only the required information.
