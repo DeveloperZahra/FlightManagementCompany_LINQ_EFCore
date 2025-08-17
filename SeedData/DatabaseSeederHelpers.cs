@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using FlightManagementCompany.Repository;
+using FlightManagementCompany_LINQ_EFCore;
+
+namespace FlightManagementCompany.SeedData
+{
+   // A static helper class responsible for seeding the database with initial sample data.
+/// This class orchestrates the creation of all entities, ensuring referential integrity.
+    public static class DatabaseSeederHelpers
+    {
+        public static void CreateSampleData(
+            FlightDbContext db,
+            IAirportRepo airportRepo,
+            IRouteRepo routeRepo,
+            IAircraftRepo aircraftRepo,
+            IFlightRepo flightRepo,
+            IPassengerRepo passengerRepo,
+            IBookingRepo bookingRepo,
+            ITicketRepo ticketRepo,
+            IBaggageRepo baggageRepo,
+            ICrewMemberRepo crewRepo,
+            IFlightCrewRepo flightCrewRepo,
+            IAircraftMaintenanceRepo maintenanceRepo
+        )
+        {
+
+
+
+
+        }
+    }
+}
