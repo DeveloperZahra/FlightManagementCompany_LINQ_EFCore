@@ -18,7 +18,7 @@ namespace FlightManagementCompany.SeedData
             FlightDbContext db, //The primary database context, used for overall management (e.g., saving changes)
             IAirportRepo airportRepo, //The repository for managing Airport entities
             IRouteRepo routeRepo, //The repository for managing Route entities
-            IAircraftRepo aircraftRepo,
+            IAircraftRepo aircraftRepo,//The repository for managing Aircraft entities
             IFlightRepo flightRepo,
             IPassengerRepo passengerRepo,
             IBookingRepo bookingRepo,
