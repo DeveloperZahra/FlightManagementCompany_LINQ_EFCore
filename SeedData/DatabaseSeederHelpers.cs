@@ -16,7 +16,7 @@ namespace FlightManagementCompany.SeedData
         /// This method uses the repository pattern to interact with each database entity.
         public static void CreateSampleData(
             FlightDbContext db, //The primary database context, used for overall management (e.g., saving changes)
-            IAirportRepo airportRepo,
+            IAirportRepo airportRepo, //The repository for managing Airport entities
             IRouteRepo routeRepo,
             IAircraftRepo aircraftRepo,
             IFlightRepo flightRepo,
