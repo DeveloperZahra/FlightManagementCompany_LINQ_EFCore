@@ -160,3 +160,9 @@ There are no transitive dependencies.
 
 There are no transitive dependencies.
 All non-key attributes are dependent only on the primary key.
+
+### 📊What are Data Transfer Objects (DTOs)?
+
+DTO stands for Data Transfer Object. It is a design pattern used in programming applications to simplify the process of transferring data between different layers of an application, such as transferring data from the database layer to the front-end layer or vice versa.
+
+Simply put, a DTO is an object (class) that contains only properties and no behaviors or business logic. Its primary purpose is to group data into a single object to facilitate its sending and receiving across a network or between layers.
