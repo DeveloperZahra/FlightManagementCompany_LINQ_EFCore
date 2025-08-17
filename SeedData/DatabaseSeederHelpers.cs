@@ -19,7 +19,7 @@ namespace FlightManagementCompany.SeedData
             IAirportRepo airportRepo, //The repository for managing Airport entities
             IRouteRepo routeRepo, //The repository for managing Route entities
             IAircraftRepo aircraftRepo,//The repository for managing Aircraft entities
-            IFlightRepo flightRepo,
+            IFlightRepo flightRepo, //The repository for managing Flight entities
             IPassengerRepo passengerRepo,
             IBookingRepo bookingRepo,
             ITicketRepo ticketRepo,
