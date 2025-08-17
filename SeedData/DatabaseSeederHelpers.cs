@@ -24,7 +24,7 @@ namespace FlightManagementCompany.SeedData
             IBookingRepo bookingRepo, //The repository for managing Booking entities
             ITicketRepo ticketRepo, //The repository for managing Ticket entities
             IBaggageRepo baggageRepo,//The repository for managing Baggage entities
-            ICrewMemberRepo crewRepo,
+            ICrewMemberRepo crewRepo,//The repository for managing CrewMember entities
             IFlightCrewRepo flightCrewRepo,
             IAircraftMaintenanceRepo maintenanceRepo
         )
