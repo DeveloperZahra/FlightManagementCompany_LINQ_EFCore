@@ -255,4 +255,24 @@ Role = fc. RoleOnFlight
 return flight;
 }
 ```
+**3. Using DTOs in an API Controller:**
+
+Here, the controller calls a repository function that returns the DTO directly, then displays it as a response to the client request.
+
+```sql 
+// Inside FlightController
+[HttpGet("{id}")]
+public async Task<IActionResult> GetFlight(int id)
+{
+// Call the repository function that returns the DTO
+var flightDetails = await _flightRepo.GetFlightDetailsById(id);
+
+if (flightDetails == null)
+{
+return NotFound(); // Return 404 if the flight was not found
+}
+
+return Ok(flightDetails); // Return the DTO as a JSON response
+}
+```
 
