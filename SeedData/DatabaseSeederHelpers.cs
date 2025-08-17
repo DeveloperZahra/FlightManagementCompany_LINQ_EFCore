@@ -73,6 +73,32 @@ namespace FlightManagementCompany.SeedData
             }
 
 
+            // ===== AIRCRAFT =====
+            if (!aircraftRepo.GetAllAircraft().Any())
+            {
+                var aircrafts = new List<Aircraft>
+                {
+                    new Aircraft { Model = "Boeing 737", Capacity = 180,     TailNumber = "A4O-BA" },
+                    new Aircraft { Model = "Airbus A320", Capacity = 150,    TailNumber = "A4O-BB" },
+                    new Aircraft { Model = "Boeing 787", Capacity = 260,     TailNumber = "A4O-BC" },
+                    new Aircraft { Model = "Airbus A330", Capacity = 270,    TailNumber = "A4O-BD" },
+                    new Aircraft { Model = "Embraer E175", Capacity = 80,    TailNumber = "A4O-BE" },
+                    new Aircraft { Model = "Boeing 737 MAX", Capacity = 190, TailNumber = "A4O-BF" },
+                    new Aircraft { Model = "Airbus A321", Capacity = 200,    TailNumber = "A4O-BG" },
+                    new Aircraft { Model = "ATR 72", Capacity = 70,          TailNumber = "A4O-BH" },
+                    new Aircraft { Model = "Bombardier Q400", Capacity = 76, TailNumber = "A4O-BI" },
+                    new Aircraft { Model = "Boeing 777", Capacity = 320,     TailNumber = "A4O-BJ" }
+                };
+                foreach (var ac in aircrafts) aircraftRepo.AddAircraft(ac);
+                db.SaveChanges();
+            }
+
+
+
+
+
+
+
         }
     }
 }
