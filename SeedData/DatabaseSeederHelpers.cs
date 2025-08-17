@@ -114,6 +114,25 @@ namespace FlightManagementCompany.SeedData
                 db.SaveChanges();
             }
 
+            // ===== PASSENGERS =====
+            if (!passengerRepo.GetAllPassengers().Any())
+            {
+                var passengers = new List<Passenger>
+                {
+                    new Passenger { P_F_Name = "Fatema",  P_L_Name= "Hamed",   PassportNo = "A1234567", Nationality = "Omani",      DOB = new DateOnly(2000,5,20) },
+                    new Passenger { P_F_Name = "John",    P_L_Name ="Smith",   PassportNo = "B7654321", Nationality = "British",    DOB = new DateOnly(1995,3,10) },
+                    new Passenger { P_F_Name = "Emma",    P_L_Name ="Johnson", PassportNo = "C1112233", Nationality = "American",   DOB = new DateOnly(1990,8,15) },
+                    new Passenger { P_F_Name = "Ali",     P_L_Name="Khan",     PassportNo = "D2223344", Nationality = "Pakistani",  DOB = new DateOnly(1985,1,5)  },
+                    new Passenger { P_F_Name = "Sophia",  P_L_Name ="Lee",     PassportNo = "E3334455", Nationality = "Singaporean",DOB = new DateOnly(1998,7,12) },
+                    new Passenger { P_F_Name = "Carlos",  P_L_Name="Garcia",   PassportNo = "F4445566", Nationality = "Spanish",    DOB = new DateOnly(1987,2,23) },
+                    new Passenger { P_F_Name = "Fatima",  P_L_Name="Alsaaidi", PassportNo = "G5556677", Nationality = "Moroccan",   DOB = new DateOnly(1993,11,30)},
+                    new Passenger { P_F_Name = "David",   P_L_Name="Brown",    PassportNo = "H6667788", Nationality = "Canadian",   DOB = new DateOnly(1980,4,2)  },
+                    new Passenger { P_F_Name = "Maria",   P_L_Name ="Rossi",   PassportNo = "I7778899", Nationality = "Italian",    DOB = new DateOnly(1992,9,19) },
+                    new Passenger { P_F_Name = "Chen",    P_L_Name="Wei",      PassportNo = "J8889900", Nationality = "Chinese",    DOB = new DateOnly(1996,12,25)}
+                };
+                foreach (var p in passengers) passengerRepo.Addpassenger(p);
+                db.SaveChanges();
+            }
 
 
 
