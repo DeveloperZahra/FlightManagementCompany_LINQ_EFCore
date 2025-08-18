@@ -8,10 +8,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FlightManagementCompany.SeedData
 {
-   // A static helper class responsible for seeding the database with initial sample data.
-/// This class orchestrates the creation of all entities, ensuring referential integrity.
+    // A static helper class responsible for seeding the database with initial sample data.
+    /// This class orchestrates the creation of all entities, ensuring referential integrity.
     public static class DatabaseSeederHelpers
     {
+
 
         // Creates a complete set of sample data for the Flight Management System.
         /// This method uses the repository pattern to interact with each database entity.
@@ -27,8 +28,7 @@ namespace FlightManagementCompany.SeedData
             IBaggageRepo baggageRepo,//The repository for managing Baggage entities
             ICrewMemberRepo crewRepo,//The repository for managing CrewMember entities
             IFlightCrewRepo flightCrewRepo, //The repository for managing FlightCrew (the join table) entities
-            IAircraftMaintenanceRepo maintenanceRepo//The repository for managing AircraftMaintenance entities
-        )
+            IAircraftMaintenanceRepo maintenanceRepo//The repository for managing AircraftMaintenance entities, Flight flight)
         {
 
             // ===== AIRPORTS =====
@@ -109,7 +109,7 @@ namespace FlightManagementCompany.SeedData
                     new Flight { RouteId = 8, AircraftId = 8, DepartureUtc = DateTime.Now.AddHours(9), ArrivalUtc = DateTime.Now.AddHours(12), Status = "Scheduled" },
                     new Flight { RouteId = 9, AircraftId = 9, DepartureUtc = DateTime.Now.AddHours(10),ArrivalUtc = DateTime.Now.AddHours(13), Status = "Scheduled" },
                     new Flight { RouteId = 10,AircraftId =10, DepartureUtc = DateTime.Now.AddHours(11),ArrivalUtc = DateTime.Now.AddHours(14), Status = "Scheduled" }
-                };      
+                };
                 foreach (var f in flights) flightRepo.AddFlight(f);
                 db.SaveChanges();
             }
@@ -154,7 +154,28 @@ namespace FlightManagementCompany.SeedData
                 db.SaveChanges();
             }
 
+            // ===== TICKETS =====
+            if (!ticketRepo.GetAllTickets().Any())
+            {
+                var booking = db.booking.ToList();
+                var flights = db.Flights.ToList();
 
+                var tickets = new List<Ticket>
+                {
+                    new Ticket { SeatNumber = "12A", Fare = 150m, CheckedIn = false, BookingId = booking[0].BookingId, FlightId = flights[0].FlightId },
+                    new Ticket { SeatNumber = "14B", Fare = 200m, CheckedIn = true, BookingId = booking[1].BookingId, FlightId = flights[1].FlightId },
+                    new Ticket { SeatNumber = "15B", Fare = 300m, CheckedIn = false, BookingId = booking[2].BookingId, FlightId = flights[2].FlightId },
+                    new Ticket { SeatNumber = "16D", Fare = 180m, CheckedIn = false, BookingId = booking[3].BookingId, FlightId = flights[3].FlightId },
+                    new Ticket { SeatNumber = "17A", Fare = 220m, CheckedIn = true, BookingId = booking[4].BookingId, FlightId = flights[4].FlightId },
+                    new Ticket { SeatNumber = "18B", Fare = 270m, CheckedIn = false, BookingId = booking[5].BookingId, FlightId = flights[5].FlightId },
+                    new Ticket { SeatNumber = "19C", Fare = 190m, CheckedIn = true, BookingId = booking[6].BookingId, FlightId = flights[6].FlightId },
+                    new Ticket { SeatNumber = "20D", Fare = 250m, CheckedIn = false, BookingId = booking[7].BookingId, FlightId = flights[7].FlightId },
+                    new Ticket { SeatNumber = "20A", Fare = 230m, CheckedIn = false, BookingId = booking[8].BookingId, FlightId = flights[8].FlightId },
+                    new Ticket { SeatNumber = "22B", Fare = 300m, CheckedIn = true, BookingId = booking[9].BookingId, FlightId = flights[9].FlightId }
+                };
+
+
+            }
         }
-    }
+    } 
 }
