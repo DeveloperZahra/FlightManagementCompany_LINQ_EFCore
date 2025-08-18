@@ -5,6 +5,7 @@ using FlightManagementCompany.Models;
 using FlightManagementCompany.Repository;
 using FlightManagementCompany_LINQ_EFCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static FlightManagementCompany.Models.CrewMember;
 
 namespace FlightManagementCompany.SeedData
 {
@@ -175,7 +176,7 @@ namespace FlightManagementCompany.SeedData
                 };
             }
 
-            
+
             // ===== BAGGAGE =====
             if (!baggageRepo.GetAllBaggages().Any())
             {
@@ -194,5 +195,34 @@ namespace FlightManagementCompany.SeedData
                     new Baggage { TicketId = tickets[9].TicketId, WeightKg = 19.8m, TagNumber = "BG010" }
                 };
             }
-    } 
+
+
+            // ===== CREW MEMBERS =====
+            if (!crewRepo.GetAllCrewMembers().Any())
+            {
+                var crew = new List<CrewMember>
+                {
+                    new CrewMember { M_F_Name = "Captain Ali" , M_L_Name = "Al-Hinai",Role = CrewRole.Pilot,  LicenseNo = "123" },
+                    new CrewMember { M_F_Name = "Captain Said", M_L_Name =  "Al-Balushi", Role = CrewRole.CoPilot,  LicenseNo = "123" },
+                    new CrewMember { M_F_Name = "First Officer Khalid" , M_L_Name =  "Al-Riyami",  Role = CrewRole.FlightAttendant, LicenseNo = "123" },
+                    new CrewMember { M_F_Name = "First Officer Yousuf", M_L_Name = "Al-Kindi", Role = CrewRole.FlightAttendant, LicenseNo = "123" },
+                    new CrewMember { M_F_Name = "Layla" , M_L_Name = "Al-Maskari", Role = CrewRole.FlightAttendant, LicenseNo = "123" },
+                    new CrewMember { M_F_Name = "Aisha" , M_L_Name = "Al-Zadjali", Role = CrewRole.FlightAttendant , LicenseNo= "123"},
+                    new CrewMember { M_F_Name = "Huda" , M_L_Name =  " Al-Lawati", Role = CrewRole.FlightAttendant, LicenseNo="123" },
+                    new CrewMember { M_F_Name = "Fatma" , M_L_Name = "Al-Harthi", Role = CrewRole.FlightAttendant, LicenseNo="123" },
+                    new CrewMember { M_F_Name = "Omar" , M_L_Name = "Al-Maamari", Role = CrewRole.CoPilot, LicenseNo="123" },
+                    new CrewMember { M_F_Name = "Salim" , M_L_Name =" Al-Siyabi", Role = CrewRole.Pilot, LicenseNo= "123" }
+                };
+                foreach (var c in crew) crewRepo.AddCrewMember(c);
+                db.SaveChanges();
+            }
+
+
+        } 
+
+
+
+    
+    
+    }
 }
