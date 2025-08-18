@@ -18,6 +18,9 @@ namespace FlightManagementCompany
             // Ensure database is created
             context.Database.EnsureCreated();
 
+            // Initialize seed data if needed
+            SeedData.Initialize(context);
+
         }
     }
 }
