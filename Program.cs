@@ -21,6 +21,15 @@ namespace FlightManagementCompany
             // Initialize seed data if needed
             SeedData.Initialize(context);
 
+            // Initialize service classes (Business Logic Layer)
+            var flightService = new FlightService(context);
+            var passengerService = new PassengerService(context);
+            var crewService = new CrewService(context);
+            var maintenanceService = new MaintenanceService(context);
+            var baggageService = new BaggageService(context);
+            var analysisService = new AnalysisService(context);
+            var demoService = new DemoService(context);
+
         }
     }
 }
