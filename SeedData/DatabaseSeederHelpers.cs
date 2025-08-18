@@ -134,6 +134,25 @@ namespace FlightManagementCompany.SeedData
                 db.SaveChanges();
             }
 
+            // ===== BOOKINGS =====
+            if (!bookingRepo.GetAllBooking().Any())
+            {
+                var bookings = new List<Booking>
+                {
+                    new Booking { FlightId = 1, PassengerId = 1, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 2, PassengerId = 2, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 3, PassengerId = 3, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 4, PassengerId = 4, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 5, PassengerId = 5, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 6, PassengerId = 6, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 7, PassengerId = 7, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 8, PassengerId = 8, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 9, PassengerId = 9, BookingDate = DateTime.Now, Status = "Confirmed" },
+                    new Booking { FlightId = 10, PassengerId = 10, BookingDate = DateTime.Now, Status = "Confirmed" }
+                };
+                foreach (var b in bookings) bookingRepo.AddBooking(b);
+                db.SaveChanges();
+            }
 
 
         }
