@@ -13,6 +13,11 @@ namespace FlightManagementCompany
                 .Options;
 
             using var context = new FlightDbContext(options);
+
+
+            // Ensure database is created
+            context.Database.EnsureCreated();
+
         }
     }
 }
