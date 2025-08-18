@@ -29,7 +29,7 @@ namespace FlightManagementCompany.SeedData
             IBaggageRepo baggageRepo,//The repository for managing Baggage entities
             ICrewMemberRepo crewRepo,//The repository for managing CrewMember entities
             IFlightCrewRepo flightCrewRepo, //The repository for managing FlightCrew (the join table) entities
-            IAircraftMaintenanceRepo maintenanceRepo//The repository for managing AircraftMaintenance entities, Flight flight)
+            IAircraftMaintenanceRepo maintenanceRepo) //The repository for managing AircraftMaintenance entities, Flight flight)
         {
 
             // ===== AIRPORTS =====
