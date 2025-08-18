@@ -221,18 +221,20 @@ namespace FlightManagementCompany.SeedData
             //===== FLIGHT CREW(Assignments) =====
             if (!flightCrewRepo.GetAllFlightCrews().Any())
             {
+                var flights = db.Flights.ToList();
+                var crew = db.CrewMembers.ToList();
                 var flightCrews = new List<FlightCrew>
                 {
-                    new FlightCrew { FlightId = 1, CrewId = 1 },
-                    new FlightCrew { FlightId = 1, CrewId = 3 },
-                    new FlightCrew { FlightId = 1, CrewId = 5 },
-                    new FlightCrew { FlightId = 2, CrewId = 2 },
-                    new FlightCrew { FlightId = 2, CrewId = 4 },
-                    new FlightCrew { FlightId = 2, CrewId = 6 },
-                    new FlightCrew { FlightId = 3, CrewId = 1 },
-                    new FlightCrew { FlightId = 3, CrewId = 7 },
-                    new FlightCrew { FlightId = 4, CrewId = 8 },
-                    new FlightCrew { FlightId = 5, CrewId = 9 }
+                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[0].CrewId, RoleOnFlight = "Pilot" },
+                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[1].CrewId, RoleOnFlight = "CoPilot" },
+                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[2].CrewId, RoleOnFlight = "FlightAttendant" },
+                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[3].CrewId, RoleOnFlight = "FlightAttendant" },
+                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[4].CrewId, RoleOnFlight = "FlightAttendant" },
+                    new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[5].CrewId, RoleOnFlight = "FlightAttendant" },
+                    new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[6].CrewId, RoleOnFlight = "CoPilot" },
+                    new FlightCrew { FlightId = flights[3].FlightId, CrewId = crew[7].CrewId, RoleOnFlight = "Pilot" },
+                    new FlightCrew { FlightId = flights[4].FlightId, CrewId = crew[8].CrewId, RoleOnFlight = "FlightAttendant" },
+                    new FlightCrew { FlightId = flights[5].FlightId, CrewId = crew[9].CrewId, RoleOnFlight = "FlightAttendant" }
                 };
                 foreach (var fc in flightCrews) flightCrewRepo.AddFlightCrew(fc);
                 db.SaveChanges();
