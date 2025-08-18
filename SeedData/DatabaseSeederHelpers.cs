@@ -173,9 +173,26 @@ namespace FlightManagementCompany.SeedData
                     new Ticket { SeatNumber = "20A", Fare = 230m, CheckedIn = false, BookingId = booking[8].BookingId, FlightId = flights[8].FlightId },
                     new Ticket { SeatNumber = "22B", Fare = 300m, CheckedIn = true, BookingId = booking[9].BookingId, FlightId = flights[9].FlightId }
                 };
-
-
             }
-        }
+
+            
+            // ===== BAGGAGE =====
+            if (!baggageRepo.GetAllBaggages().Any())
+            {
+                var tickets = db.Tickets.ToList();
+                var baggages = new List<Baggage>
+                {
+                    new Baggage { TicketId = tickets[0].TicketId, WeightKg = 20.5m, TagNumber = "BG001" },
+                    new Baggage { TicketId = tickets[1].TicketId, WeightKg = 18.0m, TagNumber = "BG002" },
+                    new Baggage { TicketId = tickets[2].TicketId, WeightKg = 22.3m, TagNumber = "BG003" },
+                    new Baggage { TicketId = tickets[3].TicketId, WeightKg = 19.0m, TagNumber = "BG004" },
+                    new Baggage { TicketId = tickets[4].TicketId, WeightKg = 23.5m, TagNumber = "BG005" },
+                    new Baggage { TicketId = tickets[5].TicketId, WeightKg = 21.2m, TagNumber = "BG006" },
+                    new Baggage { TicketId = tickets[6].TicketId, WeightKg = 20.0m, TagNumber = "BG007" },
+                    new Baggage { TicketId = tickets[7].TicketId, WeightKg = 24.0m, TagNumber = "BG008" },
+                    new Baggage { TicketId = tickets[8].TicketId, WeightKg = 22.5m, TagNumber = "BG009" },
+                    new Baggage { TicketId = tickets[9].TicketId, WeightKg = 19.8m, TagNumber = "BG010" }
+                };
+            }
     } 
 }
