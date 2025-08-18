@@ -218,6 +218,30 @@ namespace FlightManagementCompany.SeedData
             }
 
 
+            //===== FLIGHT CREW(Assignments) =====
+            if (!flightCrewRepo.GetAllFlightCrews().Any())
+            {
+                var flightCrews = new List<FlightCrew>
+                {
+                    new FlightCrew { FlightId = 1, CrewId = 1 },
+                    new FlightCrew { FlightId = 1, CrewId = 3 },
+                    new FlightCrew { FlightId = 1, CrewId = 5 },
+                    new FlightCrew { FlightId = 2, CrewId = 2 },
+                    new FlightCrew { FlightId = 2, CrewId = 4 },
+                    new FlightCrew { FlightId = 2, CrewId = 6 },
+                    new FlightCrew { FlightId = 3, CrewId = 1 },
+                    new FlightCrew { FlightId = 3, CrewId = 7 },
+                    new FlightCrew { FlightId = 4, CrewId = 8 },
+                    new FlightCrew { FlightId = 5, CrewId = 9 }
+                };
+                foreach (var fc in flightCrews) flightCrewRepo.AddFlightCrew(fc);
+                db.SaveChanges();
+            }
+
+
+
+
+
         } 
 
 
