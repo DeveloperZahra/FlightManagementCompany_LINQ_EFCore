@@ -241,7 +241,26 @@ namespace FlightManagementCompany.SeedData
             }
 
 
-
+            // ===== AIRCRAFT MAINTENANCE =====
+            if (!maintenanceRepo.GetAllAircraftMaintenance().Any())
+            {
+                var aircrafts = db.Aircrafts.ToList();
+                var maintenances = new List<AircraftMaintenance>
+                {
+                    new AircraftMaintenance { AircraftId = aircrafts[0].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-30), Type = "Engine check",              Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[1].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-15), Type = "Landing gear inspection",   Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[2].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-10), Type = "Avionics software update",  Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[3].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-5),  Type = "Cabin pressure test",       Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[4].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-25), Type = "Hydraulic system check",    Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[5].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-20), Type = "Fuel system inspection",    Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[6].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-18), Type = "Engine oil replacement",    Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[7].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-12), Type = "Flight control calibration",Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[8].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-8),  Type = "Propeller inspection",      Note = "Good" },
+                    new AircraftMaintenance { AircraftId = aircrafts[9].AircraftId, MaintenanceDate = DateTime.UtcNow.AddDays(-3),  Type = "Emergency exit check",      Note = "Good" }
+                };
+                foreach (var m in maintenances) maintenanceRepo.AddAircraftMaintenance(m);
+                db.SaveChanges();
+            }
 
 
         } 
