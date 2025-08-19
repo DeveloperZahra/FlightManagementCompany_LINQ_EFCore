@@ -94,7 +94,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     var perf = flightService.GetOnTimePerformance();
                         foreach (var p in perf)
                         {
-                            Console.WriteLine($"Flight {p.FlightNumber} | Departed: {p.DepartureStatus} | Arrived: {p.ArrivalStatus}");
+                        // Prints the flight number and the status of its departure and arrival.
+                        Console.WriteLine($"Flight {p.FlightNumber} | Departed: {p.DepartureStatus} | Arrived: {p.ArrivalStatus}");
                         }
                         break;
 
