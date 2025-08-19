@@ -65,7 +65,9 @@ namespace FlightManagementCompany_LINQ_EFCore;
                 {
                     case "1": // Case "1": Demonstrates how to retrieve all flights along with their passengers.
                     Console.WriteLine("\n=== All Flights with Passengers ===");
-                        var flights = flightService.GetAllFlightsWithPassengers();
+                    // Calls a method from 'flightService' that is expected to return a DTO
+                    // containing flight and passenger data.
+                    var flights = flightService.GetAllFlightsWithPassengers();
                         foreach (var f in flights)
                         {
                             Console.WriteLine($"Flight {f.FlightNumber} from {f.Origin} to {f.Destination}");
