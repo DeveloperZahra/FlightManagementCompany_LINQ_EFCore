@@ -167,8 +167,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "10":
-                        Console.WriteLine("\n=== Baggage Overweight Alerts ===");
+                    case "10": //  Displays alerts for overweight baggage.
+                    Console.WriteLine("\n=== Baggage Overweight Alerts ===");
                         var overweight = baggageService.GetOverweightAlerts();
                         foreach (var b in overweight)
                         {
