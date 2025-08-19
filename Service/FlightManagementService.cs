@@ -76,6 +76,11 @@ namespace FlightManagementCompany.Service
             return _passengerRepo.GetAllPassengers();
         }
 
+        // ======================= BOOKINGS ======================
+        public IEnumerable<Booking> GetAllBookings()
+        {
+            return _bookingRepo.GetAllBooking();
+        }
     }
 }
     
