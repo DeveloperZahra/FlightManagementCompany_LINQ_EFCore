@@ -218,8 +218,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     Console.WriteLine("Exiting... Goodbye!");
                         return;
 
-                    default:
-                        Console.WriteLine("Invalid option. Please try again.");
+                    default: // Default case: Handles any invalid input.
+                    Console.WriteLine("Invalid option. Please try again.");
                         break;
                 }
             }
