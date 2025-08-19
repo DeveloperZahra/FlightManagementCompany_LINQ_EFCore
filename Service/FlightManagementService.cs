@@ -99,6 +99,12 @@ namespace FlightManagementCompany.Service
         {
             return _crewRepo.GetAllCrewMembers();
         }
+
+        // ======================= FLIGHT CREW ===================
+        public IEnumerable<FlightCrew> GetAllFlightCrewAssignments()
+        {
+            return _flightCrewRepo.GetAllFlightCrews();
+        }
     }
 }
     
