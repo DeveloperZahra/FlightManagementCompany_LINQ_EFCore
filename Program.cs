@@ -56,10 +56,6 @@ namespace FlightManagementCompany_LINQ_EFCore
                 Console.WriteLine("Seed done");
                 Console.ResetColor();
 
-
-
-
-
             }
             catch (Exception ex)
             {
