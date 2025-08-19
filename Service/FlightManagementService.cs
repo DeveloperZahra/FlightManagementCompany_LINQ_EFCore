@@ -93,6 +93,12 @@ namespace FlightManagementCompany.Service
         {
             return _baggageRepo.GetAllBaggages();
         }
+
+        // ======================= CREW ==========================
+        public IEnumerable<CrewMember> GetAllCrewMembers()
+        {
+            return _crewRepo.GetAllCrewMembers();
+        }
     }
 }
     
