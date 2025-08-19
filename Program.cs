@@ -149,7 +149,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     Console.WriteLine("\n=== Frequent Fliers ===");
                     // Calls a service method to get the frequent fliers
                     var frequentFliers = passengerService.GetFrequentFliers(10);
-                        foreach (var ff in frequentFliers)
+                    // Prints the name of each frequent flier and their flight count.
+                    foreach (var ff in frequentFliers)
                         {
                             Console.WriteLine($"{ff.Name} | Flights Taken: {ff.FlightCount}");
                         }
