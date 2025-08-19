@@ -49,6 +49,11 @@ namespace FlightManagementCompany.Service
             return _airportRepo.GetAllAirports();
         }
 
+        // ======================= ROUTES ========================
+        public IEnumerable<Route> GetAllRoutes()
+        {
+            return _routeRepo.GetAllRoutes();
+        }
 
 
 
