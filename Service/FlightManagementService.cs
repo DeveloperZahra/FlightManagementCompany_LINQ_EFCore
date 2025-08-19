@@ -1,4 +1,5 @@
-﻿using FlightManagementCompany.Repository;
+﻿using FlightManagementCompany.Models;
+using FlightManagementCompany.Repository;
 using FlightManagementCompany_LINQ_EFCore;
 using System;
 using System.Collections.Generic;
@@ -38,14 +39,20 @@ namespace FlightManagementCompany.Service
             _crewRepo = new CrewMemberRepo(context);
             _flightCrewRepo = new FlightCrewRepo(context);
             _maintenanceRepo = new AircraftMaintenanceRepo(context);
-       
-
-        { 
-
-
-
-
 
 
         }
+
+           // ======================= AIRPORTS =======================
+        public IEnumerable<Airport> GetAllAirports()
+        {
+            return _airportRepo.GetAllAirports();
+        }
+
+
+
+
+    }
 }
+    
+
