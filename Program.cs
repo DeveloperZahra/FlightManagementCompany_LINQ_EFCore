@@ -79,7 +79,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
 
                     case "2":   // Demonstrates how to get the top revenue-generating routes.
                     Console.WriteLine("\n=== Top Routes by Revenue ===");
-                        var topRoutes = flightService.GetTopRoutesByRevenue(5);
+                    // Calls a method to get the top 5 routes based on revenue.
+                    var topRoutes = flightService.GetTopRoutesByRevenue(5);
                         foreach (var route in topRoutes)
                         {
                             Console.WriteLine($"Route: {route.Origin} -> {route.Destination}, Revenue: {route.TotalRevenue:C}");
