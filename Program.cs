@@ -105,7 +105,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         var occupancy = flightService.GetSeatOccupancyHeatmap();
                         foreach (var o in occupancy)
                         {
-                            Console.WriteLine($"Flight {o.FlightNumber} | Occupied: {o.OccupiedSeats}/{o.TotalSeats}");
+                        // Displays the number of occupied seats versus the total number of seats.
+                        Console.WriteLine($"Flight {o.FlightNumber} | Occupied: {o.OccupiedSeats}/{o.TotalSeats}");
                         }
                         break;
 
