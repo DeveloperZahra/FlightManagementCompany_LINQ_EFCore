@@ -105,6 +105,11 @@ namespace FlightManagementCompany.Service
         {
             return _flightCrewRepo.GetAllFlightCrews();
         }
+        // ======================= MAINTENANCE ===================
+        public IEnumerable<AircraftMaintenance> GetAllMaintenanceRecords()
+        {
+            return _maintenanceRepo.GetAllAircraftMaintenance();
+        }
     }
 }
     
