@@ -138,7 +138,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     Console.WriteLine("\n=== Passengers with Connections ===");
                     // Calls a service method to get a list of passengers with connecting flights.
                     var connectingPassengers = passengerService.GetPassengersWithConnections();
-                        foreach (var p in connectingPassengers)
+                    // Prints each passenger's name and their connecting flights.
+                    foreach (var p in connectingPassengers)
                         {
                             Console.WriteLine($"{p.Name} has connecting flights: {string.Join(", ", p.Flights)}");
                         }
