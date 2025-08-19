@@ -178,8 +178,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "11":
-                        Console.WriteLine("\n=== Complex Set/Partitioning Examples ===");
+                    case "11":  // Runs and displays a complex set and partitioning analysis.
+                    Console.WriteLine("\n=== Complex Set/Partitioning Examples ===");
                         var partitions = analysisService.RunComplexSetExamples();
                         foreach (var part in partitions)
                         {
