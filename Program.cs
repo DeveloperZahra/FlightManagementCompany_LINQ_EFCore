@@ -187,8 +187,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "12":
-                        Console.WriteLine("\n=== Conversion Operators Demonstration ===");
+                    case "12":  //  Demonstrates conversion operators.
+                    Console.WriteLine("\n=== Conversion Operators Demonstration ===");
                         var conversions = demoService.RunConversionDemo();
                         foreach (var conv in conversions)
                         {
