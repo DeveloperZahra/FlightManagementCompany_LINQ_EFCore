@@ -196,8 +196,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "13":
-                        Console.WriteLine("\n=== Window-like Operation (Running Totals) ===");
+                    case "13":  //  Displays a running total of revenue over time.
+                    Console.WriteLine("\n=== Window-like Operation (Running Totals) ===");
                         var totals = analysisService.GetRunningTotals();
                         foreach (var t in totals)
                         {
