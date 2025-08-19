@@ -68,7 +68,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     // Calls a method from 'flightService' that is expected to return a DTO
                     // containing flight and passenger data.
                     var flights = flightService.GetAllFlightsWithPassengers();
-                        foreach (var f in flights)
+                    // Iterates through the collection of flights and prints their details.
+                    foreach (var f in flights)
                         {
                             Console.WriteLine($"Flight {f.FlightNumber} from {f.Origin} to {f.Destination}");
                             Console.WriteLine("Passengers: " + string.Join(", ", f.PassengerNames));
