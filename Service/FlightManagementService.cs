@@ -81,6 +81,12 @@ namespace FlightManagementCompany.Service
         {
             return _bookingRepo.GetAllBooking();
         }
+
+        // ======================= TICKETS =======================
+        public IEnumerable<Ticket> GetAllTickets()
+        {
+            return _ticketRepo.GetAllTickets();
+        }
     }
 }
     
