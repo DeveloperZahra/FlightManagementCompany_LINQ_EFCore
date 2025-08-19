@@ -114,7 +114,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         Console.WriteLine("\nEnter Flight Number to check available seats:");
                     // Reads the flight number entered by the user.
                     string? flightNo = Console.ReadLine();
-                        var seats = flightService.GetAvailableSeats(flightNo);
+                    // Calls a method to get a list of available seats for that flight.
+                    var seats = flightService.GetAvailableSeats(flightNo);
                         Console.WriteLine($"Available seats for {flightNo}: {string.Join(", ", seats)}");
                         break;
 
