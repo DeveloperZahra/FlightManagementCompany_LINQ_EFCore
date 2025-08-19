@@ -63,7 +63,7 @@ namespace FlightManagementCompany_LINQ_EFCore;
             // based on the user's input ('choice').
             switch (choice)
                 {
-                    case "1": // Case "1": Demonstrates how to retrieve all flights along with their passengers.
+                    case "1": //  Demonstrates how to retrieve all flights along with their passengers.
                     Console.WriteLine("\n=== All Flights with Passengers ===");
                     // Calls a method from 'flightService' that is expected to return a DTO
                     // containing flight and passenger data.
@@ -77,8 +77,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "2":
-                        Console.WriteLine("\n=== Top Routes by Revenue ===");
+                    case "2":   // Demonstrates how to get the top revenue-generating routes.
+                    Console.WriteLine("\n=== Top Routes by Revenue ===");
                         var topRoutes = flightService.GetTopRoutesByRevenue(5);
                         foreach (var route in topRoutes)
                         {
