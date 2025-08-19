@@ -205,8 +205,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "14":
-                        Console.WriteLine("\n=== Forecasting (Simple) ===");
+                    case "14": // Displays a simple flight and revenue forecast.
+                    Console.WriteLine("\n=== Forecasting (Simple) ===");
                         var forecast = analysisService.GetSimpleForecast();
                         foreach (var f in forecast)
                         {
