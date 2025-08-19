@@ -156,8 +156,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "9":
-                        Console.WriteLine("\n=== Maintenance Alerts ===");
+                    case "9": //Displays maintenance alerts for aircraft.
+                    Console.WriteLine("\n=== Maintenance Alerts ===");
                         var alerts = maintenanceService.GetMaintenanceAlerts();
                         foreach (var a in alerts)
                         {
