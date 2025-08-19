@@ -90,7 +90,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
 
                     case "3":   // Demonstrates how to check the on-time performance of flights.
                     Console.WriteLine("\n=== On-Time Performance ===");
-                        var perf = flightService.GetOnTimePerformance();
+                    // Retrieves on-time performance data.
+                    var perf = flightService.GetOnTimePerformance();
                         foreach (var p in perf)
                         {
                             Console.WriteLine($"Flight {p.FlightNumber} | Departed: {p.DepartureStatus} | Arrived: {p.ArrivalStatus}");
