@@ -70,6 +70,11 @@ namespace FlightManagementCompany.Service
         }
 
 
+        // ======================= PASSENGERS ====================
+        public IEnumerable<Passenger> GetAllPassengers()
+        {
+            return _passengerRepo.GetAllPassengers();
+        }
 
     }
 }
