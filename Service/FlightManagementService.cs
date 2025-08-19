@@ -61,6 +61,16 @@ namespace FlightManagementCompany.Service
             return _aircraftRepo.GetAllAircraft();
         }
 
+
+        // ======================= FLIGHTS =======================
+        public IEnumerable<Flight> GetFlightsByDate(DateTime date)
+        {
+            return _flightRepo.GetAllFlights()
+                .Where(f => f.DepartureUtc.Date == date.Date);
+        }
+
+
+
     }
 }
     
