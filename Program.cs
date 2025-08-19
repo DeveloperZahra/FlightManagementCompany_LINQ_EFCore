@@ -145,8 +145,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "8":
-                        Console.WriteLine("\n=== Frequent Fliers ===");
+                    case "8":  //  Displays the top 10 most frequent fliers
+                    Console.WriteLine("\n=== Frequent Fliers ===");
                         var frequentFliers = passengerService.GetFrequentFliers(10);
                         foreach (var ff in frequentFliers)
                         {
