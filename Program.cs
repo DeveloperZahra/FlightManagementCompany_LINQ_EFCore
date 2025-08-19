@@ -59,7 +59,9 @@ namespace FlightManagementCompany_LINQ_EFCore;
             // The '?' after 'string' indicates that the variable can be null.
             string? choice = Console.ReadLine();
 
-                switch (choice)
+            // A switch statement is used to execute different blocks of code
+            // based on the user's input ('choice').
+            switch (choice)
                 {
                     case "1":
                         Console.WriteLine("\n=== All Flights with Passengers ===");
