@@ -55,7 +55,11 @@ namespace FlightManagementCompany.Service
             return _routeRepo.GetAllRoutes();
         }
 
-
+        // ======================= AIRCRAFTS =====================
+        public IEnumerable<Aircraft> GetAllAircrafts()
+        {
+            return _aircraftRepo.GetAllAircraft();
+        }
 
     }
 }
