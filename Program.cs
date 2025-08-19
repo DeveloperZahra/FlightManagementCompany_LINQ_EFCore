@@ -72,7 +72,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     foreach (var f in flights)
                         {
                             Console.WriteLine($"Flight {f.FlightNumber} from {f.Origin} to {f.Destination}");
-                            Console.WriteLine("Passengers: " + string.Join(", ", f.PassengerNames));
+                        // Joins the passenger names from the DTO into a single string for printing.
+                        Console.WriteLine("Passengers: " + string.Join(", ", f.PassengerNames));
                         }
                         break;
 
