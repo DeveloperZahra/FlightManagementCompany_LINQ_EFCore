@@ -134,8 +134,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "7":
-                        Console.WriteLine("\n=== Passengers with Connections ===");
+                    case "7": //  Displays passengers with connecting flights.
+                    Console.WriteLine("\n=== Passengers with Connections ===");
                         var connectingPassengers = passengerService.GetPassengersWithConnections();
                         foreach (var p in connectingPassengers)
                         {
