@@ -121,7 +121,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
 
                     case "6"://  Demonstrates a business logic check for crew scheduling conflicts.
                     Console.WriteLine("\n=== Crew Scheduling Conflicts ===");
-                        var conflicts = crewService.FindSchedulingConflicts();
+                    // Calls a service method to find any scheduling overlaps among crew members.
+                    var conflicts = crewService.FindSchedulingConflicts();
                         if (conflicts.Count == 0) Console.WriteLine("No conflicts found.");
                         else
                         {
