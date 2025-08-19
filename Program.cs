@@ -214,8 +214,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "0":
-                        Console.WriteLine("Exiting... Goodbye!");
+                    case "0": //  Exits the application.
+                    Console.WriteLine("Exiting... Goodbye!");
                         return;
 
                     default:
