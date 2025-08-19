@@ -119,8 +119,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         Console.WriteLine($"Available seats for {flightNo}: {string.Join(", ", seats)}"); // Prints the list of available seats.
                     break;
 
-                    case "6":
-                        Console.WriteLine("\n=== Crew Scheduling Conflicts ===");
+                    case "6"://  Demonstrates a business logic check for crew scheduling conflicts.
+                    Console.WriteLine("\n=== Crew Scheduling Conflicts ===");
                         var conflicts = crewService.FindSchedulingConflicts();
                         if (conflicts.Count == 0) Console.WriteLine("No conflicts found.");
                         else
