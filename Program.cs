@@ -112,7 +112,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
 
                     case "5": // Allows the user to input a flight number to find available seats.
                         Console.WriteLine("\nEnter Flight Number to check available seats:");
-                        string? flightNo = Console.ReadLine();
+                    // Reads the flight number entered by the user.
+                    string? flightNo = Console.ReadLine();
                         var seats = flightService.GetAvailableSeats(flightNo);
                         Console.WriteLine($"Available seats for {flightNo}: {string.Join(", ", seats)}");
                         break;
