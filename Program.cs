@@ -116,8 +116,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     string? flightNo = Console.ReadLine();
                     // Calls a method to get a list of available seats for that flight.
                     var seats = flightService.GetAvailableSeats(flightNo);
-                        Console.WriteLine($"Available seats for {flightNo}: {string.Join(", ", seats)}");
-                        break;
+                        Console.WriteLine($"Available seats for {flightNo}: {string.Join(", ", seats)}"); // Prints the list of available seats.
+                    break;
 
                     case "6":
                         Console.WriteLine("\n=== Crew Scheduling Conflicts ===");
