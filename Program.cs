@@ -171,7 +171,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     Console.WriteLine("\n=== Baggage Overweight Alerts ===");
                     // Calls a service method to get overweight baggage alerts.
                     var overweight = baggageService.GetOverweightAlerts();
-                        foreach (var b in overweight)
+                    // Prints the details for each overweight baggage item.
+                    foreach (var b in overweight)
                         {
                             Console.WriteLine($"Passenger {b.PassengerName}, Flight {b.FlightNumber}, Baggage {b.Weight}kg (Over limit!)");
                         }
