@@ -126,7 +126,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         if (conflicts.Count == 0) Console.WriteLine("No conflicts found.");
                         else
                         {
-                            foreach (var c in conflicts)
+                        // If conflicts are found, iterate and print the details.
+                        foreach (var c in conflicts)
                             {
                                 Console.WriteLine($"Crew {c.CrewName} has overlapping flights {c.FlightNumber1} and {c.FlightNumber2}");
                             }
