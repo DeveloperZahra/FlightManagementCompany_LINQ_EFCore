@@ -83,7 +83,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     var topRoutes = flightService.GetTopRoutesByRevenue(5);
                         foreach (var route in topRoutes)
                         {
-                            Console.WriteLine($"Route: {route.Origin} -> {route.Destination}, Revenue: {route.TotalRevenue:C}");
+                        // Uses a formatted string to display the route and its total revenue.
+                        Console.WriteLine($"Route: {route.Origin} -> {route.Destination}, Revenue: {route.TotalRevenue:C}");
                         }
                         break;
 
