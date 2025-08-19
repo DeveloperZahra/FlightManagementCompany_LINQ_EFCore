@@ -99,8 +99,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                         }
                         break;
 
-                    case "4":
-                        Console.WriteLine("\n=== Seat Occupancy Heatmap ===");
+                    case "4":  //  Demonstrates how to retrieve seat occupancy data.
+                    Console.WriteLine("\n=== Seat Occupancy Heatmap ===");
                         var occupancy = flightService.GetSeatOccupancyHeatmap();
                         foreach (var o in occupancy)
                         {
