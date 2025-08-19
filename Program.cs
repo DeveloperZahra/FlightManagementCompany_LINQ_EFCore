@@ -63,8 +63,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
             // based on the user's input ('choice').
             switch (choice)
                 {
-                    case "1":
-                        Console.WriteLine("\n=== All Flights with Passengers ===");
+                    case "1": // Case "1": Demonstrates how to retrieve all flights along with their passengers.
+                    Console.WriteLine("\n=== All Flights with Passengers ===");
                         var flights = flightService.GetAllFlightsWithPassengers();
                         foreach (var f in flights)
                         {
