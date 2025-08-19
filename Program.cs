@@ -1,39 +1,88 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using FlightManagementCompany.SeedData;
-using FlightManagementCompany.Services;
+using FlightManagementCompany.Service; 
+using FlightManagementCompany_LINQ_EFCore;
+using FlightManagementCompany.Repository;
 
-namespace FlightManagementCompany_LINQ_EFCore;
+namespace FlightManagementCompany_LINQ_EFCore
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            // Configure database context options
-            var options = new DbContextOptionsBuilder<FlightDbContext>()
-                .UseSqlServer("Data Source=.;Initial Catalog=FlightManagementDB;Integrated Security=True;TrustServerCertificate=True")
-                .Options;
+       
+            static async Task Main()
+            {
+                await using var db = new FlightDbContext();
 
-            using var context = new FlightDbContext(options);
+            //DEV reset(optional)
+            //     await db.Database.EnsureDeletedAsync();
+
+            await db.Database.MigrateAsync();
+
+            // ---- Repositories wired to the same DbContext ----
+            var airportRepo = new AirportRepo(db);
+            var routeRepo = new RouteRepo(db);
+            var aircraftRepo = new AircraftRepo(db);
+            var flightRepo = new FlightRepo(db);
+            var passengerRepo = new PassengerRepo(db);
+            var bookingRepo = new BookingRepo(db);
+            var ticketRepo = new TicketRepo(db);
+            var baggageRepo = new BaggageRepo(db);
+            var crewRepo = new CrewMemberRepo(db);
+            var flightCrewRepo = new FlightCrewRepo(db);
+            var maintenanceRepo = new AircraftMaintenanceRepo(db);
+
+            try
+            {
 
 
-            // Ensure database is created
-            context.Database.EnsureCreated();
+                DatabaseSeederHelpers.CreateSampleData(
+                     db,
+                     airportRepo,
+                     routeRepo,
+                     aircraftRepo,
+                     flightRepo,
+                     passengerRepo,
+                     bookingRepo,
+                     ticketRepo,
+                     baggageRepo,
+                     crewRepo,
+                     flightCrewRepo,
+                     maintenanceRepo
+                    );
 
-            // Initialize seed data if needed
-            SeedData.Initialize(context);
 
-            // Initialize service classes (Business Logic Layer)
-            var flightService = new FlightService(context);
-            var passengerService = new PassengerService(context);
-            var crewService = new CrewService(context);
-            var maintenanceService = new MaintenanceService(context);
-            var baggageService = new BaggageService(context);
-            var analysisService = new AnalysisService(context);
-            var demoService = new DemoService(context);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Seed done");
+                Console.ResetColor();
 
-            // Main menu loop
-            while (true)
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Seeding failed: {ex.Message}");
+                Console.ResetColor();
+                Console.WriteLine(ex); // full stack for debugging
+            }
+
+                // Initialize seed data if needed
+                // DatabaseSeederHelpers.Initialize(context);
+
+                //// Initialize service classes (Business Logic Layer)
+                //var flightService = new FlightService(context);
+                //var passengerService = new PassengerService(context);
+                //var crewService = new CrewService(context);
+                //var maintenanceService = new MaintenanceService(context);
+                //var baggageService = new BaggageService(context);
+                //var analysisService = new AnalysisService(context);
+                //var demoService = new DemoService(context);
+
+                // Main menu loop
+                while (true)
             {
                 Console.WriteLine("\n==============================");
                 Console.WriteLine("✈️  FLIGHT MANAGEMENT SYSTEM");
@@ -226,5 +275,6 @@ namespace FlightManagementCompany_LINQ_EFCore;
 
         }
     }
+
 
 
