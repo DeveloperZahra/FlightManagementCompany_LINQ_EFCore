@@ -160,7 +160,8 @@ namespace FlightManagementCompany_LINQ_EFCore;
                     Console.WriteLine("\n=== Maintenance Alerts ===");
                     // Calls a service method to get maintenance alerts.
                     var alerts = maintenanceService.GetMaintenanceAlerts();
-                        foreach (var a in alerts)
+                    // Prints the details of each maintenance alert.
+                    foreach (var a in alerts)
                         {
                             Console.WriteLine($"Aircraft {a.AircraftTail} requires {a.AlertType} (Last Check: {a.LastCheck:yyyy-MM-dd})");
                         }
