@@ -113,6 +113,22 @@ namespace FlightManagementCompany.Service
                 Console.WriteLine($"Flight {item.FlightId}: {item.TotalBags} bags | {item.TotalWeight} kg");
             }
         }
+
+        // Maintenance Alert: List aircrafts with maintenance in last 30 days
+        public void GetMaintenanceAlerts()
+        {
+            var cutoffDate = DateTime.Now.AddDays(-30);
+
+            var recentMaintenance = _maintenanceRepo.GetAllAircraftMaintenance()
+                .Where(m => m.MaintenanceDate >= cutoffDate)
+                .Select(m => new { m.Aircraft.TailNumber, m.MaintenanceDate, m.Type });
+
+            Console.WriteLine("Recent Maintenance Alerts (last 30 days):");
+            foreach (var item in recentMaintenance)
+            {
+                Console.WriteLine($"Aircraft {item.TailNumber} | {item.Type} | {item.MaintenanceDate}");
+            }
+        }
     }
     }
 }
