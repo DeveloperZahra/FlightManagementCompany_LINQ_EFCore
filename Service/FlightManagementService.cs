@@ -42,73 +42,38 @@ namespace FlightManagementCompany.Service
 
 
         }
-
-           // ======================= AIRPORTS =======================
-        public IEnumerable<Airport> GetAllAirports()
+        // ================= MENU OPERATIONS =================
+        public void GetDailyManifest(DateTime date)
         {
-            return _airportRepo.GetAllAirports();
-        }
+            var flights = _flightRepo.GetAllFlights()
+                .Where(f => f.DepartureUtc.Date == date.Date)
+                .ToList();
 
-        // ======================= ROUTES ========================
-        public IEnumerable<Route> GetAllRoutes()
-        {
-            return _routeRepo.GetAllRoutes();
-        }
+            foreach (var flight in flights)
+            {
+                Console.WriteLine($"Flight {flight.FlightNumber} | {flight.DepartureUtc} -> {flight.ArrivalUtc}");
 
-        // ======================= AIRCRAFTS =====================
-        public IEnumerable<Aircraft> GetAllAircrafts()
-        {
-            return _aircraftRepo.GetAllAircraft();
-        }
+                var crew = _flightCrewRepo.GetAllFlightCrews()
+                    .Where(fc => fc.FlightId == flight.FlightId)
+                    .Select(fc => fc.CrewMember);
 
+                Console.WriteLine("Crew Members:");
+                foreach (var member in crew)
+                {
+                    Console.WriteLine($" - {member.M_F_Name} {member.M_L_Name}({member.Role})");
+                }
 
-        // ======================= FLIGHTS =======================
-        public IEnumerable<Flight> GetFlightsByDate(DateTime date)
-        {
-            return _flightRepo.GetAllFlights()
-                .Where(f => f.DepartureUtc.Date == date.Date);
-        }
+                var passengers = _bookingRepo.GetAllBookings()
+                    .Where(b => b.FlightId == flight.FlightId)
+                    .Select(b => b.Passenger);
 
-
-        // ======================= PASSENGERS ====================
-        public IEnumerable<Passenger> GetAllPassengers()
-        {
-            return _passengerRepo.GetAllPassengers();
-        }
-
-        // ======================= BOOKINGS ======================
-        public IEnumerable<Booking> GetAllBookings()
-        {
-            return _bookingRepo.GetAllBooking();
-        }
-
-        // ======================= TICKETS =======================
-        public IEnumerable<Ticket> GetAllTickets()
-        {
-            return _ticketRepo.GetAllTickets();
-        }
-
-        // ======================= BAGGAGE =======================
-        public IEnumerable<Baggage> GetAllBaggage()
-        {
-            return _baggageRepo.GetAllBaggages();
-        }
-
-        // ======================= CREW ==========================
-        public IEnumerable<CrewMember> GetAllCrewMembers()
-        {
-            return _crewRepo.GetAllCrewMembers();
-        }
-
-        // ======================= FLIGHT CREW ===================
-        public IEnumerable<FlightCrew> GetAllFlightCrewAssignments()
-        {
-            return _flightCrewRepo.GetAllFlightCrews();
-        }
-        // ======================= MAINTENANCE ===================
-        public IEnumerable<AircraftMaintenance> GetAllMaintenanceRecords()
-        {
-            return _maintenanceRepo.GetAllAircraftMaintenance();
+                Console.WriteLine("Passengers:");
+                foreach (var passenger in passengers)
+                {
+                    Console.WriteLine($" - {passenger.FirstName} {passenger.LastName}");
+                }
+                Console.WriteLine("-------------------------------------------------");
+            }
         }
     }
 }
