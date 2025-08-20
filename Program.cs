@@ -7,15 +7,17 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany_LINQ_EFCore
 {
-    internal class Program
+    // Entry point of the Flight Management System
+    class Program
     {
        
             static async Task Main()
             {
-                await using var db = new FlightDbContext();
+            using var context = new FlightDbContext();
+            context.Database.EnsureCreated();
 
-            //DEV reset(optional)
-            //     await db.Database.EnsureDeletedAsync();
+
+            //await db.Database.EnsureDeletedAsync();
 
             await db.Database.MigrateAsync();
 
@@ -112,7 +114,7 @@ namespace FlightManagementCompany_LINQ_EFCore
                     Console.WriteLine("\n=== All Flights with Passengers ===");
                     // Calls a method from 'flightService' that is expected to return a DTO
                     // containing flight and passenger data.
-                    var flights = flightService.GetAllFlightsWithPassengers();
+                    var flights = FlightManagementService.GetAllFlightsWithPassengers();
                     // Iterates through the collection of flights and prints their details.
                     foreach (var f in flights)
                         {
@@ -168,14 +170,12 @@ namespace FlightManagementCompany_LINQ_EFCore
                     Console.WriteLine("\n=== Crew Scheduling Conflicts ===");
                     // Calls a service method to find any scheduling overlaps among crew members.
                     var conflicts = crewService.FindSchedulingConflicts();
-                        if (conflicts.Count == 0) Console.WriteLine("No conflicts found.");
+                        if (conflicts == null) Console.WriteLine("No conflicts found.");
                         else
-                        {
-                        // If conflicts are found, iterate and print the details.
-                        foreach (var c in conflicts)
-                            {
-                                Console.WriteLine($"Crew {c.CrewName} has overlapping flights {c.FlightNumber1} and {c.FlightNumber2}");
-                            }
+                        { 
+                            
+                                Console.WriteLine($"Crew {conflicts.CrewName} has overlapping flights {c.FlightNumber1} and {c.FlightNumber2}");
+                            
                         }
                         break;
 
