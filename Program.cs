@@ -13,9 +13,10 @@ namespace FlightManagementCompany_LINQ_EFCore
 
         static async Task Main()
         {
-            using var context = new FlightDbContext();
+            using FlightDbContext context = new FlightDbContext();
             context.Database.EnsureCreated();
 
+   
 
             //await db.Database.EnsureDeletedAsync();
 
@@ -36,9 +37,20 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             // Initialize service with all repositories
             var service = new FlightManagementService(
-                airportRepo, routeRepo, aircraftRepo, flightRepo, passengerRepo,
-                bookingRepo, ticketRepo, baggageRepo, crewRepo, flightCrewRepo, maintenanceRepo
-            );
+                 airportRepo,
+                 routeRepo,
+                 aircraftRepo,
+                 flightRepo,
+                 passengerRepo,
+                 bookingRepo,
+                 ticketRepo,
+                 baggageRepo,
+                 crewRepo,
+                 flightCrewRepo,
+                 maintenanceRepo,
+                 context 
+             );
+            
             bool exit = false;  // A boolean flag to control the main application loop.
 
             // The main loop that continues to run as long as the 'exit' flag is false.
@@ -56,10 +68,56 @@ namespace FlightManagementCompany_LINQ_EFCore
                 Console.WriteLine("====================================");
                 Console.Write("Enter your choice: ");
 
+                string? choice = Console.ReadLine();
+                Console.WriteLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Enter date (yyyy-mm-dd): ");
+                        if (DateTime.TryParse(Console.ReadLine(), out DateTime date))
+                        {
+                            service.GetDailyManifest(date);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid date format.");
+                        }
+                        break;
+
+                    case "2":
+                        service.GetFrequentFliers();
+                        break;
+
+                    case "3":
+                        service.GetBaggageSummary();
+                        break;
+
+                    case "4":
+                        service.GetMaintenanceAlerts();
+                        break;
+
+                    case "5":
+                        service.GetSeatAvailability();
+                        break;
+
+                    case "6":
+                        exit = true;
+                        Console.WriteLine("Exiting system. Goodbye!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+
+                Console.WriteLine();
             }
+
         }
     }
 }
+
 
 
 

@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Service
         private readonly AircraftMaintenanceRepo _maintenanceRepo;
 
         // Inject all repositories through constructor dependency injection.
-        public FlightManagementService(IAirportRepo airportRepo, IRouteRepo routeRepo, IAircraftRepo aircraftRepo, IFlightRepo flightRepo, FlightDbContext context)
+        public FlightManagementService(IAirportRepo airportRepo, IRouteRepo routeRepo, IAircraftRepo aircraftRepo, IFlightRepo flightRepo, IPassengerRepo passengerRepo, IBookingRepo bookingRepo, ITicketRepo ticketRepo, IBaggageRepo baggageRepo, ICrewMemberRepo crewMemberRepo, IFlightCrewRepo flightCrewRepo, IAircraftMaintenanceRepo aircraftMaintenanceRepo ,FlightDbContext context)
         {
             _airportRepo = new AirportRepo(context);
             _routeRepo = new RouteRepo(context);
