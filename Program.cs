@@ -19,20 +19,20 @@ namespace FlightManagementCompany_LINQ_EFCore
 
             //await db.Database.EnsureDeletedAsync();
 
-            await db.Database.MigrateAsync();
+            await context.Database.MigrateAsync();
 
-            // ---- Repositories wired to the same DbContext ----
-            var airportRepo = new AirportRepo(db);
-            var routeRepo = new RouteRepo(db);
-            var aircraftRepo = new AircraftRepo(db);
-            var flightRepo = new FlightRepo(db);
-            var passengerRepo = new PassengerRepo(db);
-            var bookingRepo = new BookingRepo(db);
-            var ticketRepo = new TicketRepo(db);
-            var baggageRepo = new BaggageRepo(db);
-            var crewRepo = new CrewMemberRepo(db);
-            var flightCrewRepo = new FlightCrewRepo(db);
-            var maintenanceRepo = new AircraftMaintenanceRepo(db);
+            // Initialize repositories
+            IAirportRepo airportRepo = new AirportRepo(context);
+            IRouteRepo routeRepo = new RouteRepo(context);
+            IAircraftRepo aircraftRepo = new AircraftRepo(context);
+            IFlightRepo flightRepo = new FlightRepo(context);
+            IPassengerRepo passengerRepo = new PassengerRepo(context);
+            IBookingRepo bookingRepo = new BookingRepo(context);
+            ITicketRepo ticketRepo = new TicketRepo(context);
+            IBaggageRepo baggageRepo = new BaggageRepo(context);
+            ICrewMemberRepo crewRepo = new CrewMemberRepo(context);
+            IFlightCrewRepo flightCrewRepo = new FlightCrewRepo(context);
+            IAircraftMaintenanceRepo maintenanceRepo = new AircraftMaintenanceRepo(context);
 
             try
             {
