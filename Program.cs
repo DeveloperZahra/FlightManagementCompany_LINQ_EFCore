@@ -57,7 +57,7 @@ namespace FlightManagementCompany_LINQ_EFCore
             while (!exit)
             {
                 Console.WriteLine("====================================");
-                Console.WriteLine("   Flight Management System Menu");
+                Console.WriteLine(" Welcome To Flight Management System Menu");
                 Console.WriteLine("====================================");
                 Console.WriteLine("1. Daily Flight Manifest");
                 Console.WriteLine("2. Frequent Fliers");
