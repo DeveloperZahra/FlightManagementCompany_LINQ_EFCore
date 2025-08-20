@@ -129,8 +129,26 @@ namespace FlightManagementCompany.Service
                 Console.WriteLine($"Aircraft {item.TailNumber} | {item.Type} | {item.MaintenanceDate}");
             }
         }
-    }
+
+        // Seat Availability: Show available seats per flight
+        public void GetSeatAvailability()
+        {
+            var flights = _flightRepo.GetAllFlights();
+
+            Console.WriteLine("Seat Availability Report:");
+            foreach (var flight in flights)
+            {
+                int bookedSeats = _bookingRepo.GetAllBooking()
+                    .Count(b => b.FlightId == flight.FlightId);
+
+                int totalSeats = flight.Aircraft?.Capacity ?? 0;
+                int availableSeats = totalSeats - bookedSeats;
+
+                Console.WriteLine($"Flight {flight.FlightNumber} | Booked: {bookedSeats} | Available: {availableSeats}");
+            }
+        }
     }
 }
+
     
 
