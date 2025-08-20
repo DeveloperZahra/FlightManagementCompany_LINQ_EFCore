@@ -66,18 +66,37 @@ namespace FlightManagementCompany.Service
                     Console.WriteLine($" - {member.M_F_Name} {member.M_L_Name}({member.Role})");
                 }
 
-                var passengers = _bookingRepo.GetAllBookings()
+                var passengers = _bookingRepo.GetAllBooking()
                     .Where(b => b.FlightId == flight.FlightId)
                     .Select(b => b.Passenger);
 
                 Console.WriteLine("Passengers:");
                 foreach (var passenger in passengers)
                 {
-                    Console.WriteLine($" - {passenger.FirstName} {passenger.LastName}");
+                    Console.WriteLine($" - {passenger.P_F_Name} {passenger.P_L_Name}");
                 }
                 Console.WriteLine("-------------------------------------------------");
             }
         }
+        // Frequent Fliers: List passengers who booked more than 2 flights.
+
+
+        public void GetFrequentFliers()
+        {
+            var frequentFliers = _bookingRepo.GetAllBooking()
+                .GroupBy(b => b.PassengerId)
+                .Where(g => g.Count() > 2)
+                .Select(g => g.First().Passenger);
+
+            Console.WriteLine("Frequent Fliers (More than 2 bookings):");
+            foreach (var passenger in frequentFliers)
+            {
+                Console.WriteLine($" - {passenger.P_F_Name} {passenger.P_L_Name}");
+            }
+        }
+
+
+    }
     }
 }
     
