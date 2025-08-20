@@ -95,7 +95,24 @@ namespace FlightManagementCompany.Service
             }
         }
 
+        // Baggage Summary: Show total baggage per flight
+        public void GetBaggageSummary()
+        {
+            var baggageSummary = _baggageRepo.GetAllBaggages()
+                .GroupBy(b => b.FlightId)
+                .Select(g => new
+                {
+                    FlightId = g.Key,
+                    TotalBags = g.Count(),
+                    TotalWeight = g.Sum(b => b.WeightKg)
+                });
 
+            Console.WriteLine("Baggage Summary:");
+            foreach (var item in baggageSummary)
+            {
+                Console.WriteLine($"Flight {item.FlightId}: {item.TotalBags} bags | {item.TotalWeight} kg");
+            }
+        }
     }
     }
 }
