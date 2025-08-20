@@ -43,6 +43,9 @@ namespace FlightManagementCompany.Service
 
         }
         // ================= MENU OPERATIONS =================
+
+        // Daily Flight Manifest: List all flights for a specific date 
+        /// with assigned crew and passengers
         public void GetDailyManifest(DateTime date)
         {
             var flights = _flightRepo.GetAllFlights()
