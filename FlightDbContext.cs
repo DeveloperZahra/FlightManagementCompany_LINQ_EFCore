@@ -17,7 +17,7 @@ namespace FlightManagementCompany_LINQ_EFCore
         // Constructor that accepts DbContextOptions (used for dependency injection)
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-J26O8DP\\SQLEXPRESS01 ;Initial Catalog=FlightManagementDB;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-OBKM6IG ;Initial Catalog=FlightManagementDB;Integrated Security=True;TrustServerCertificate=True");
         }
 
         // DbSets represent tables in the database for each entity
@@ -84,8 +84,20 @@ namespace FlightManagementCompany_LINQ_EFCore
            .HasForeignKey(r => r.DestinationAirportId)
            .OnDelete(DeleteBehavior.Restrict);
 
+            // Relationship: Aircraft -> Flights
+            modelBuilder.Entity<Aircraft>()
+                .HasMany(a => a.Flights)                // Aircraft has many Flights
+                .WithOne(f => f.Aircraft)               // Each Flight has one Aircraft
+                .HasForeignKey(f => f.AircraftId)       // ForeignKey in Flight
+                .OnDelete(DeleteBehavior.Restrict);     // Prevent cascade delete
 
 
+            // Flight ↔ Route (Many-to-One)
+            modelBuilder.Entity<Flight>()
+                .HasOne(f => f.Route)                 // Flight has one Route
+                .WithMany(r => r.Flights)             // Route has many Flights
+                .HasForeignKey(f => f.RouteId)        // FK in Flight
+                .OnDelete(DeleteBehavior.Restrict);   // Prevent cascade delete
 
         }
     }
