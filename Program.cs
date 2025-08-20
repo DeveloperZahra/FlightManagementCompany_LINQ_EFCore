@@ -41,6 +41,7 @@ namespace FlightManagementCompany_LINQ_EFCore
             );
             bool exit = false;  // A boolean flag to control the main application loop.
 
+            // The main loop that continues to run as long as the 'exit' flag is false.
             while (!exit)
             {
                 Console.WriteLine("====================================");
