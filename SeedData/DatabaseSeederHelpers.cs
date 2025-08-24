@@ -100,16 +100,16 @@ namespace FlightManagementCompany.SeedData
             {
                 var flights = new List<Flight>
                 {
-                    new Flight { RouteId = 1, AircraftId = 1, DepartureUtc = DateTime.Now.AddHours(2), ArrivalUtc = DateTime.Now.AddHours(4), Status = "Scheduled" },
-                    new Flight { RouteId = 2, AircraftId = 2, DepartureUtc = DateTime.Now.AddHours(3), ArrivalUtc = DateTime.Now.AddHours(5), Status = "Scheduled" },
-                    new Flight { RouteId = 3, AircraftId = 3, DepartureUtc = DateTime.Now.AddHours(4), ArrivalUtc = DateTime.Now.AddHours(6), Status = "Scheduled" },
-                    new Flight { RouteId = 4, AircraftId = 4, DepartureUtc = DateTime.Now.AddHours(5), ArrivalUtc = DateTime.Now.AddHours(7), Status = "Scheduled" },
-                    new Flight { RouteId = 5, AircraftId = 5, DepartureUtc = DateTime.Now.AddHours(6), ArrivalUtc = DateTime.Now.AddHours(8), Status = "Scheduled" },
-                    new Flight { RouteId = 6, AircraftId = 6, DepartureUtc = DateTime.Now.AddHours(7), ArrivalUtc = DateTime.Now.AddHours(9), Status = "Scheduled" },
-                    new Flight { RouteId = 7, AircraftId = 7, DepartureUtc = DateTime.Now.AddHours(8), ArrivalUtc = DateTime.Now.AddHours(10), Status = "Scheduled" },
-                    new Flight { RouteId = 8, AircraftId = 8, DepartureUtc = DateTime.Now.AddHours(9), ArrivalUtc = DateTime.Now.AddHours(12), Status = "Scheduled" },
-                    new Flight { RouteId = 9, AircraftId = 9, DepartureUtc = DateTime.Now.AddHours(10),ArrivalUtc = DateTime.Now.AddHours(13), Status = "Scheduled" },
-                    new Flight { RouteId = 10,AircraftId =10, DepartureUtc = DateTime.Now.AddHours(11),ArrivalUtc = DateTime.Now.AddHours(14), Status = "Scheduled" }
+                    new Flight { RouteId = 1, AircraftId = 1, DepartureUtc = DateTime.Now.AddHours(2), ArrivalUtc = DateTime.Now.AddHours(4), Status = "Scheduled" , FlightNumber = "WY101"},
+                    new Flight { RouteId = 2, AircraftId = 2, DepartureUtc = DateTime.Now.AddHours(3), ArrivalUtc = DateTime.Now.AddHours(5), Status = "Scheduled", FlightNumber = "WY102" },
+                    new Flight { RouteId = 3, AircraftId = 3, DepartureUtc = DateTime.Now.AddHours(4), ArrivalUtc = DateTime.Now.AddHours(6), Status = "Scheduled", FlightNumber = "WY103" },
+                    new Flight { RouteId = 4, AircraftId = 4, DepartureUtc = DateTime.Now.AddHours(5), ArrivalUtc = DateTime.Now.AddHours(7), Status = "Scheduled" , FlightNumber = "WY104" },
+                    new Flight { RouteId = 5, AircraftId = 5, DepartureUtc = DateTime.Now.AddHours(6), ArrivalUtc = DateTime.Now.AddHours(8), Status = "Scheduled" , FlightNumber = "WY105" },
+                    new Flight { RouteId = 6, AircraftId = 6, DepartureUtc = DateTime.Now.AddHours(7), ArrivalUtc = DateTime.Now.AddHours(9), Status = "Scheduled" , FlightNumber = "WY106" },
+                    new Flight { RouteId = 7, AircraftId = 7, DepartureUtc = DateTime.Now.AddHours(8), ArrivalUtc = DateTime.Now.AddHours(10), Status = "Scheduled" ,FlightNumber = "WY107"},
+                    new Flight { RouteId = 8, AircraftId = 8, DepartureUtc = DateTime.Now.AddHours(9), ArrivalUtc = DateTime.Now.AddHours(12), Status = "Scheduled" , FlightNumber = "WY108" },
+                    new Flight { RouteId = 9, AircraftId = 9, DepartureUtc = DateTime.Now.AddHours(10),ArrivalUtc = DateTime.Now.AddHours(13), Status = "Scheduled" ,FlightNumber = "WY109" },
+                    new Flight { RouteId = 10,AircraftId =10, DepartureUtc = DateTime.Now.AddHours(11),ArrivalUtc = DateTime.Now.AddHours(14), Status = "Scheduled" , FlightNumber = "WY110"}
                 };
                 foreach (var f in flights) flightRepo.AddFlight(f);
                 db.SaveChanges();
@@ -138,18 +138,19 @@ namespace FlightManagementCompany.SeedData
             // ===== BOOKINGS =====
             if (!bookingRepo.GetAllBooking().Any())
             {
+                var flights = db.Flights.ToList();
                 var bookings = new List<Booking>
                 {
-                    new Booking { FlightId = 1, PassengerId = 1, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 2, PassengerId = 2, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 3, PassengerId = 3, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 4, PassengerId = 4, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 5, PassengerId = 5, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 6, PassengerId = 6, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 7, PassengerId = 7, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 8, PassengerId = 8, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 9, PassengerId = 9, BookingDate = DateTime.Now, Status = "Confirmed" },
-                    new Booking { FlightId = 10, PassengerId = 10, BookingDate = DateTime.Now, Status = "Confirmed" }
+                    new Booking { FlightId = flights[0].FlightId, PassengerId = 1, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK001" },
+                    new Booking { FlightId = flights[1].FlightId, PassengerId = 2, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK002"},
+                    new Booking { FlightId = flights[2].FlightId, PassengerId = 3, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK003" },
+                    new Booking { FlightId = flights[3].FlightId, PassengerId = 4, BookingDate = DateTime.Now, Status = "Confirmed", BookingRef = "BK004" },
+                    new Booking { FlightId = flights[4].FlightId, PassengerId = 5, BookingDate = DateTime.Now, Status = "Confirmed" ,BookingRef = "BK005"},
+                    new Booking { FlightId = flights[5].FlightId, PassengerId = 6, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK006" },
+                    new Booking { FlightId = flights[6].FlightId, PassengerId = 7, BookingDate = DateTime.Now, Status = "Confirmed" ,BookingRef = "BK007" },
+                    new Booking { FlightId = flights[7].FlightId, PassengerId = 8, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK008" },
+                    new Booking { FlightId = flights[8].FlightId, PassengerId = 9, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK009" },
+                    new Booking { FlightId = flights[9].FlightId, PassengerId = 10, BookingDate = DateTime.Now, Status = "Confirmed" , BookingRef = "BK010"}
                 };
                 foreach (var b in bookings) bookingRepo.AddBooking(b);
                 db.SaveChanges();
@@ -180,21 +181,30 @@ namespace FlightManagementCompany.SeedData
             // ===== BAGGAGE =====
             if (!baggageRepo.GetAllBaggages().Any())
             {
+                // Retrieve tickets only if they exist in the database
                 var tickets = db.Tickets.ToList();
-                var baggages = new List<Baggage>
+
+                if (tickets.Any())
                 {
-                    new Baggage { TicketId = tickets[0].TicketId, WeightKg = 20.5m, TagNumber = "BG001" },
-                    new Baggage { TicketId = tickets[1].TicketId, WeightKg = 18.0m, TagNumber = "BG002" },
-                    new Baggage { TicketId = tickets[2].TicketId, WeightKg = 22.3m, TagNumber = "BG003" },
-                    new Baggage { TicketId = tickets[3].TicketId, WeightKg = 19.0m, TagNumber = "BG004" },
-                    new Baggage { TicketId = tickets[4].TicketId, WeightKg = 23.5m, TagNumber = "BG005" },
-                    new Baggage { TicketId = tickets[5].TicketId, WeightKg = 21.2m, TagNumber = "BG006" },
-                    new Baggage { TicketId = tickets[6].TicketId, WeightKg = 20.0m, TagNumber = "BG007" },
-                    new Baggage { TicketId = tickets[7].TicketId, WeightKg = 24.0m, TagNumber = "BG008" },
-                    new Baggage { TicketId = tickets[8].TicketId, WeightKg = 22.5m, TagNumber = "BG009" },
-                    new Baggage { TicketId = tickets[9].TicketId, WeightKg = 19.8m, TagNumber = "BG010" }
-                };
+                    var baggages = new List<Baggage>
+                        {
+                            new Baggage { TicketId = tickets[0].TicketId, WeightKg = 29.5m, TagNumber = "BG901" },
+                            new Baggage { TicketId = tickets[1].TicketId, WeightKg = 18.0m, TagNumber = "BG902" },
+                            new Baggage { TicketId = tickets[2].TicketId, WeightKg = 22.3m, TagNumber = "BG903" },
+                            new Baggage { TicketId = tickets[3].TicketId, WeightKg = 19.0m, TagNumber = "BG904" },
+                            new Baggage { TicketId = tickets[4].TicketId, WeightKg = 23.5m, TagNumber = "BG905" },
+                            new Baggage { TicketId = tickets[5].TicketId, WeightKg = 21.2m, TagNumber = "BG906" },
+                            new Baggage { TicketId = tickets[6].TicketId, WeightKg = 20.0m, TagNumber = "BG907" },
+                            new Baggage { TicketId = tickets[7].TicketId, WeightKg = 20.0m, TagNumber = "BG908" },
+                            new Baggage { TicketId = tickets[8].TicketId, WeightKg = 21.0m, TagNumber = "BG909" },
+                            new Baggage { TicketId = tickets[9].TicketId, WeightKg = 17.8m, TagNumber = "BG910" }
+                        };
+
+                    foreach (var b in baggages) baggageRepo.AddBaggage(b);
+                    db.SaveChanges();
+                }
             }
+
 
 
             // ===== CREW MEMBERS =====
@@ -223,21 +233,26 @@ namespace FlightManagementCompany.SeedData
             {
                 var flights = db.Flights.ToList();
                 var crew = db.CrewMembers.ToList();
-                var flightCrews = new List<FlightCrew>
+
+                // Check if there are enough flights and crew members
+                if (flights.Count() >= 6 && crew.Count() >= 10)
                 {
-                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[0].CrewId, RoleOnFlight = "Pilot" },
-                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[1].CrewId, RoleOnFlight = "CoPilot" },
-                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[2].CrewId, RoleOnFlight = "FlightAttendant" },
-                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[3].CrewId, RoleOnFlight = "FlightAttendant" },
-                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[4].CrewId, RoleOnFlight = "FlightAttendant" },
-                    new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[5].CrewId, RoleOnFlight = "FlightAttendant" },
-                    new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[6].CrewId, RoleOnFlight = "CoPilot" },
-                    new FlightCrew { FlightId = flights[3].FlightId, CrewId = crew[7].CrewId, RoleOnFlight = "Pilot" },
-                    new FlightCrew { FlightId = flights[4].FlightId, CrewId = crew[8].CrewId, RoleOnFlight = "FlightAttendant" },
-                    new FlightCrew { FlightId = flights[5].FlightId, CrewId = crew[9].CrewId, RoleOnFlight = "FlightAttendant" }
-                };
-                foreach (var fc in flightCrews) flightCrewRepo.AddFlightCrew(fc);
-                db.SaveChanges();
+                    var flightCrews = new List<FlightCrew>
+                    {
+                        new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[0].CrewId, RoleOnFlight = "Pilot" },
+                        new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[1].CrewId, RoleOnFlight = "CoPilot" },
+                        new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[2].CrewId, RoleOnFlight = "FlightAttendant" },
+                        new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[3].CrewId, RoleOnFlight = "FlightAttendant" },
+                        new FlightCrew { FlightId = flights[1].FlightId, CrewId = crew[4].CrewId, RoleOnFlight = "FlightAttendant" },
+                        new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[5].CrewId, RoleOnFlight = "FlightAttendant" },
+                        new FlightCrew { FlightId = flights[2].FlightId, CrewId = crew[6].CrewId, RoleOnFlight = "CoPilot" },
+                        new FlightCrew { FlightId = flights[3].FlightId, CrewId = crew[7].CrewId, RoleOnFlight = "Pilot" },
+                        
+                    };
+
+                    foreach (var fc in flightCrews) flightCrewRepo.AddFlightCrew(fc);
+                    db.SaveChanges();
+                }
             }
 
 

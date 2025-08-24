@@ -13,7 +13,7 @@ namespace FlightManagementCompany_LINQ_EFCore
 
         static async Task Main()
         {
-            using FlightDbContext context = new FlightDbContext();
+            await using var context = new FlightDbContext();
             context.Database.EnsureCreated();
 
    
@@ -34,6 +34,28 @@ namespace FlightManagementCompany_LINQ_EFCore
             ICrewMemberRepo crewRepo = new CrewMemberRepo(context);
             IFlightCrewRepo flightCrewRepo = new FlightCrewRepo(context);
             IAircraftMaintenanceRepo maintenanceRepo = new AircraftMaintenanceRepo(context);
+
+
+            DatabaseSeederHelpers.CreateSampleData(
+                 context,
+                 airportRepo,
+                 routeRepo,
+                 aircraftRepo,
+                 flightRepo,
+                 passengerRepo,
+                 bookingRepo,
+                 ticketRepo,
+                 baggageRepo,
+                 crewRepo,
+                 flightCrewRepo,
+                 maintenanceRepo
+                );
+
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Seed done");
+            Console.ResetColor();
+
 
             // Initialize service with all repositories
             var service = new FlightManagementService(

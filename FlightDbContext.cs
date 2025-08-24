@@ -99,6 +99,22 @@ namespace FlightManagementCompany_LINQ_EFCore
                 .HasForeignKey(f => f.RouteId)        // FK in Flight
                 .OnDelete(DeleteBehavior.Restrict);   // Prevent cascade delete
 
+
+            // Composite Key for FlightCrew
+            modelBuilder.Entity<FlightCrew>()
+                .HasKey(fc => new { fc.FlightId, fc.CrewId });
+
+            // Flight ↔ FlightCrew
+            modelBuilder.Entity<FlightCrew>()
+                .HasOne(fc => fc.Flight)
+                .WithMany(f => f.FlightCrews)
+                .HasForeignKey(fc => fc.FlightId);
+
+            // Crew ↔ FlightCrew
+            modelBuilder.Entity<FlightCrew>()
+                .HasOne(fc => fc.CrewMember)
+                .WithMany(c => c.FlightCrews)
+                .HasForeignKey(fc => fc.CrewId);
         }
     }
 }

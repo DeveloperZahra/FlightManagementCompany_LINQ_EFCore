@@ -99,7 +99,7 @@ namespace FlightManagementCompany.Service
         public void GetBaggageSummary()
         {
             var baggageSummary = _baggageRepo.GetAllBaggages()
-                .GroupBy(b => b.FlightId)
+                .GroupBy(b => b.Flight)
                 .Select(g => new
                 {
                     FlightId = g.Key,

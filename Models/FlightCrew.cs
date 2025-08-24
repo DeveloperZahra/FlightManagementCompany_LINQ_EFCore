@@ -16,12 +16,12 @@ namespace FlightManagementCompany.Models
         public int CrewId { get; set; }
 
         // Foreign Key to Flight
-        [ForeignKey("FlightId")]
+        //[ForeignKey("FlightId")]
         public Flight Flight { get; set; }
 
 
         // Foreign Key to CrewMember
-        [ForeignKey("CrewId")]
+       // [ForeignKey("CrewId")]
         public CrewMember CrewMember { get; set; }
 
 

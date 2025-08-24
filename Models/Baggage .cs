@@ -32,6 +32,6 @@ namespace FlightManagementCompany.Models
         public int TicketId { get; set; } 
         [ForeignKey("TicketId")]
         public Ticket Ticket { get; set; }
-        public Flight FlightId { get; internal set; }
+        public Flight Flight { get; internal set; }
     }
 }
